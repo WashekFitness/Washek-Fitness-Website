@@ -8,29 +8,33 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 
 /* ============================================================
-   TOKENS
+   TOKENS — matched to the app's own src/index.css variables
    ============================================================ */
 :root{
-  --bg:        #14161B;
-  --bg-alt:    #1B1E24;
-  --bg-card:   #20242B;
-  --line:      rgba(236,232,222,0.12);
-  --line-soft: rgba(236,232,222,0.07);
-  --text:      #ECE8DE;
-  --text-dim:  #9AA0AA;
-  --accent:    #C98A3D;
-  --accent-2:  #C0503A;
-  --accent-ink:#1B1206;
+  --bg:        #080A0C;   /* --background: 220 20% 4% */
+  --bg-alt:    #0F1115;   /* --card:       220 18% 7% */
+  --bg-card:   #16191F;   /* --secondary:  220 15% 13%, lightened one step for nesting */
+  --line:      #21242C;   /* --border:     220 15% 15% */
+  --line-soft: rgba(255,255,255,0.05);
+  --text:      #F0F2F5;   /* --foreground: 210 20% 95% */
+  --text-dim:  #737B8C;   /* --muted-foreground: 220 10% 50% */
 
-  --display: "Big Shoulders Display", sans-serif;
-  --body:    "IBM Plex Sans", sans-serif;
+  --primary:      #1F8FFF; /* --primary: 210 100% 56% */
+  --primary-hover:#49A6FF;
+  --accent:       #12D393; /* --accent: 160 84% 45% */
+  --orange:       #F7A93B; /* --chart-4: 35 92% 60% */
+  --purple:       #B152E0; /* --chart-3: 280 70% 60% */
+
+  --display: "Space Grotesk", sans-serif;
+  --body:    "Inter", sans-serif;
 
   --wrap: 1120px;
+  --radius: 14px;
 }
 
 *, *::before, *::after{ box-sizing: border-box; }
@@ -100,7 +104,7 @@ section{ position: relative; }
   font-weight: 600;
   font-size: 0.98rem;
   padding: 13px 22px;
-  border-radius: 3px;
+  border-radius: 10px;
   text-decoration: none;
   border: 1px solid transparent;
   cursor: pointer;
@@ -108,17 +112,17 @@ section{ position: relative; }
 }
 
 .btn-primary{
-  background: var(--accent);
-  color: var(--accent-ink);
+  background: var(--primary);
+  color: #FFFFFF;
 }
-.btn-primary:hover{ background: #DEA05A; }
+.btn-primary:hover{ background: var(--primary-hover); }
 
 .btn-ghost{
   background: transparent;
   color: var(--text);
   border-color: var(--line);
 }
-.btn-ghost:hover{ border-color: var(--text-dim); }
+.btn-ghost:hover{ background: var(--bg-alt); border-color: var(--text-dim); }
 
 :focus-visible{
   outline: 2px solid var(--accent);
@@ -136,7 +140,7 @@ section{ position: relative; }
   position: sticky;
   top: 0;
   z-index: 40;
-  background: rgba(20,22,27,0.88);
+  background: rgba(8,10,12,0.88);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--line-soft);
 }
@@ -148,12 +152,44 @@ section{ position: relative; }
   height: 72px;
 }
 
+.nav-brand{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.brand-mark{
+  width: 30px;
+  height: 30px;
+  border-radius: 10px;
+  flex-shrink: 0;
+  overflow: hidden;
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+}
+.brand-mark img{ width: 100%; height: 100%; object-fit: cover; }
+.brand-mark.is-empty{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.brand-mark .mono{
+  display: none;
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--primary);
+}
+.brand-mark.is-empty .mono{ display: block; }
+.brand-mark.is-empty img{ display: none; }
+
 .nav-mark{
   font-family: var(--display);
   font-weight: 700;
-  font-size: 1.35rem;
-  text-decoration: none;
-  letter-spacing: 0.01em;
+  font-size: 1.15rem;
+  color: var(--primary);
+  letter-spacing: 0.005em;
 }
 
 .nav-links{
@@ -259,7 +295,7 @@ section{ position: relative; }
   height: 100%;
   border-radius: 24px;
   overflow: hidden;
-  background: linear-gradient(160deg, #262A32, #17191E);
+  background: linear-gradient(160deg, #1C222C, #0E1116);
 }
 
 .phone__screen img{
@@ -279,7 +315,7 @@ section{ position: relative; }
   padding: 20px;
   text-align: center;
   background-image:
-    repeating-linear-gradient(135deg, rgba(236,232,222,0.05) 0 2px, transparent 2px 14px);
+    repeating-linear-gradient(135deg, rgba(255,255,255,0.04) 0 2px, transparent 2px 14px);
 }
 
 .shot-empty-label .mark{
@@ -305,9 +341,9 @@ section{ position: relative; }
   font-family: var(--body);
   font-size: 0.76rem;
   color: var(--accent);
-  background: rgba(201,138,61,0.12);
+  background: rgba(18,211,147,0.12);
   padding: 2px 6px;
-  border-radius: 3px;
+  border-radius: 4px;
 }
 
 .phone__screen.is-empty img{ display: none; }
@@ -318,10 +354,10 @@ section{ position: relative; }
   position: relative;
   width: 100%;
   aspect-ratio: 16 / 10;
-  border-radius: 6px;
+  border-radius: var(--radius);
   overflow: hidden;
-  background: linear-gradient(160deg, #262A32, #17191E);
-  border: 1px solid var(--line-soft);
+  background: linear-gradient(160deg, #1C222C, #0E1116);
+  border: 1px solid var(--line);
 }
 .tile-shot img{ width: 100%; height: 100%; object-fit: cover; }
 .tile-shot.is-empty img{ display: none; }
@@ -344,7 +380,7 @@ section{ position: relative; }
 }
 
 .hero-eyebrow{
-  color: var(--accent);
+  color: var(--primary);
   font-weight: 600;
   font-size: 0.92rem;
   margin-bottom: 18px;
@@ -377,7 +413,7 @@ section{ position: relative; }
 .hero-note code{
   font-family: var(--body);
   color: var(--text);
-  border-bottom: 1px dashed var(--line);
+  border-bottom: 1px dashed rgba(18,211,147,0.5);
 }
 
 .hero-stage{
@@ -411,7 +447,7 @@ section{ position: relative; }
   width: 216px;
   background: var(--bg-card);
   border: 1px solid var(--line);
-  border-radius: 6px;
+  border-radius: var(--radius);
   padding: 18px 18px 16px;
   z-index: 3;
   box-shadow: 0 20px 40px -18px rgba(0,0,0,0.6);
@@ -456,29 +492,32 @@ section{ position: relative; }
 .styles{
   background: var(--bg-alt);
   padding: 100px 0;
-  border-top: 1px solid var(--line-soft);
-  border-bottom: 1px solid var(--line-soft);
 }
 
 .styles-grid{
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1px;
-  background: var(--line);
-  border: 1px solid var(--line);
+  gap: 18px;
 }
 
 .style-card{
-  background: var(--bg-alt);
-  padding: 30px 26px 32px;
+  background: var(--card-tint, var(--bg-card));
+  border: 1px solid var(--card-border, var(--line));
+  border-radius: var(--radius);
+  padding: 28px 24px 30px;
   display: flex;
   flex-direction: column;
   gap: 14px;
 }
 
+.style-card.c-accent{ --card-tint: rgba(18,211,147,0.06);  --card-border: rgba(18,211,147,0.35);  --kicker-color: var(--accent); }
+.style-card.c-orange{ --card-tint: rgba(247,169,59,0.06);  --card-border: rgba(247,169,59,0.35);  --kicker-color: var(--orange); }
+.style-card.c-primary{--card-tint: rgba(31,143,255,0.07);  --card-border: rgba(31,143,255,0.4);   --kicker-color: var(--primary); }
+.style-card.c-purple{ --card-tint: rgba(177,82,224,0.06);  --card-border: rgba(177,82,224,0.35);  --kicker-color: var(--purple); }
+
 .style-card .kicker{
   font-size: 0.82rem;
-  color: var(--accent);
+  color: var(--kicker-color, var(--accent));
   font-weight: 600;
 }
 
@@ -563,8 +602,6 @@ section{ position: relative; }
 .nutrition{
   background: var(--bg-alt);
   padding: 110px 0;
-  border-top: 1px solid var(--line-soft);
-  border-bottom: 1px solid var(--line-soft);
 }
 
 .nutrition .wrap{
@@ -577,7 +614,7 @@ section{ position: relative; }
 .macro-card{
   background: var(--bg-card);
   border: 1px solid var(--line);
-  border-radius: 8px;
+  border-radius: var(--radius);
   padding: 30px;
   display: flex;
   align-items: center;
@@ -590,9 +627,9 @@ section{ position: relative; }
   border-radius: 50%;
   flex-shrink: 0;
   background: conic-gradient(
-    var(--accent) 0 35%,
-    var(--accent-2) 35% 75%,
-    #4A5561 75% 100%
+    var(--primary) 0 35%,
+    var(--accent) 35% 75%,
+    var(--orange) 75% 100%
   );
   position: relative;
 }
@@ -606,10 +643,10 @@ section{ position: relative; }
 
 .macro-legend{ display: flex; flex-direction: column; gap: 10px; }
 .macro-legend .row{ display: flex; align-items: center; gap: 10px; font-size: 0.92rem; }
-.macro-legend .dot{ width: 10px; height: 10px; border-radius: 2px; flex-shrink: 0; }
-.macro-legend .dot.protein{ background: var(--accent); }
-.macro-legend .dot.carbs{ background: var(--accent-2); }
-.macro-legend .dot.fat{ background: #4A5561; }
+.macro-legend .dot{ width: 10px; height: 10px; border-radius: 3px; flex-shrink: 0; }
+.macro-legend .dot.protein{ background: var(--primary); }
+.macro-legend .dot.carbs{ background: var(--accent); }
+.macro-legend .dot.fat{ background: var(--orange); }
 .macro-legend small{ display: block; color: var(--text-dim); font-size: 0.78rem; margin-top: 6px; }
 
 @media (max-width: 860px){
@@ -675,7 +712,7 @@ section{ position: relative; }
   font-size: 0.9rem;
   color: var(--text-dim);
 }
-.cta-url a{ color: var(--accent); text-decoration: none; border-bottom: 1px dashed rgba(201,138,61,0.5); }
+.cta-url a{ color: var(--accent); text-decoration: none; border-bottom: 1px dashed rgba(18,211,147,0.5); }
 
 /* ============================================================
    FOOTER
@@ -694,9 +731,13 @@ footer .wrap{
 }
 
 .footer-mark{
+  display: flex;
+  align-items: center;
+  gap: 10px;
   font-family: var(--display);
   font-weight: 700;
-  font-size: 1.1rem;
+  font-size: 1.05rem;
+  color: var(--primary);
 }
 
 .footer-links{
@@ -746,7 +787,13 @@ footer .wrap{
 <input type="checkbox" id="nav-toggle">
 <header class="nav">
   <div class="wrap">
-    <a class="nav-mark" href="#top">Washek Fitness</a>
+    <a class="nav-brand" href="#top">
+      <span class="brand-mark">
+        <img src="logo.jpg" alt="" onerror="this.parentElement.classList.add('is-empty')">
+        <span class="mono">W</span>
+      </span>
+      <span class="nav-mark">Washek Fitness</span>
+    </a>
 
     <ul class="nav-links">
       <li><a href="#styles">Training styles</a></li>
@@ -831,22 +878,22 @@ footer .wrap{
       </div>
 
       <div class="styles-grid">
-        <div class="style-card">
+        <div class="style-card c-accent">
           <span class="kicker">Calisthenics</span>
           <h3>Bodyweight, done in order</h3>
           <p>Progressions from your first pull-up to one-arm work, sequenced around the equipment you actually have.</p>
         </div>
-        <div class="style-card">
+        <div class="style-card c-orange">
           <span class="kicker">Weighted calisthenics</span>
           <h3>Load added on purpose</h3>
           <p>Vests, belts, and bands added to bodyweight movements once you outgrow them — without losing the skill work underneath.</p>
         </div>
-        <div class="style-card">
+        <div class="style-card c-primary">
           <span class="kicker">Weight lifting</span>
           <h3>Barbell and dumbbell</h3>
           <p>Programming built around your gym's equipment and your experience level, from your first cycle to your tenth.</p>
         </div>
-        <div class="style-card">
+        <div class="style-card c-purple">
           <span class="kicker">Hybrid</span>
           <h3>Both, in one program</h3>
           <p>Calisthenics and weights in the same week, when neither one alone fits how you want to train.</p>
@@ -1070,7 +1117,13 @@ footer .wrap{
 
 <footer>
   <div class="wrap">
-    <span class="footer-mark">Washek Fitness</span>
+    <span class="footer-mark">
+      <span class="brand-mark">
+        <img src="logo.jpg" alt="" onerror="this.parentElement.classList.add('is-empty')">
+        <span class="mono">W</span>
+      </span>
+      Washek Fitness
+    </span>
     <ul class="footer-links">
       <li><a href="#styles">Training styles</a></li>
       <li><a href="#adapts">How it adapts</a></li>
