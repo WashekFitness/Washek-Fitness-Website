@@ -3,1137 +3,132 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Washek Fitness — A program built for your body</title>
-<meta name="description" content="Washek Fitness designs your workouts and macros around your equipment, injuries, gender, goals, and constraints — calisthenics, weighted calisthenics, weight lifting, or hybrid.">
-
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#080A0C">
+<title>Washek Fitness | Personalized Workouts, Nutrition & AI Coaching</title>
+<meta name="description" content="Washek Fitness is a personalized fitness app for calisthenics, weighted calisthenics, strength training, and hybrid training, with nutrition tools, progress tracking, and AI coaching from Kael.">
+<meta name="keywords" content="personalized fitness app, workout planner, calisthenics app, strength training app, hybrid training app, AI fitness coach, nutrition tracking, workout tracking">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Washek Fitness | Personalized Training & AI Coaching">
+<meta property="og:description" content="Personalized training, nutrition tools, progress tracking, and AI coaching built around your goals, equipment, experience, and schedule.">
+<meta property="og:image" content="data:image/jpeg;base64,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">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Washek Fitness | Personalized Training & AI Coaching">
+<meta name="twitter:description" content="A fitness app built around your training goals, equipment, experience, schedule, and preferences.">
+<meta name="twitter:image" content="data:image/jpeg;base64,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">
+<link rel="icon" type="image/jpeg" href="data:image/jpeg;base64,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">
+<link rel="apple-touch-icon" href="data:image/jpeg;base64,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">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"SoftwareApplication",
+  "name":"Washek Fitness",
+  "applicationCategory":"HealthApplication",
+  "operatingSystem":"Web",
+  "description":"Personalized fitness training, nutrition tools, progress tracking, and AI coaching for calisthenics, strength, and hybrid training.",
+  "url":"https://washek-fitness.washekfitness.workers.dev"
+}
+</script>
 <style>
-
-/* ============================================================
-   TOKENS — matched to the app's own src/index.css variables
-   ============================================================ */
-:root{
-  --bg:        #080A0C;   /* --background: 220 20% 4% */
-  --bg-alt:    #0F1115;   /* --card:       220 18% 7% */
-  --bg-card:   #16191F;   /* --secondary:  220 15% 13%, lightened one step for nesting */
-  --line:      #21242C;   /* --border:     220 15% 15% */
-  --line-soft: rgba(255,255,255,0.05);
-  --text:      #F0F2F5;   /* --foreground: 210 20% 95% */
-  --text-dim:  #737B8C;   /* --muted-foreground: 220 10% 50% */
-
-  --primary:      #1F8FFF; /* --primary: 210 100% 56% */
-  --primary-hover:#49A6FF;
-  --accent:       #12D393; /* --accent: 160 84% 45% */
-  --orange:       #F7A93B; /* --chart-4: 35 92% 60% */
-  --purple:       #B152E0; /* --chart-3: 280 70% 60% */
-
-  --display: "Space Grotesk", sans-serif;
-  --body:    "Inter", sans-serif;
-
-  --wrap: 1120px;
-  --radius: 14px;
-}
-
-*, *::before, *::after{ box-sizing: border-box; }
-
-html{ scroll-behavior: smooth; }
-
-body{
-  margin: 0;
-  background: var(--bg);
-  color: var(--text);
-  font-family: var(--body);
-  font-size: 16px;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-}
-
-img{ max-width: 100%; display: block; }
-
-a{ color: inherit; }
-
-h1, h2, h3{
-  font-family: var(--display);
-  font-weight: 700;
-  line-height: 1.02;
-  margin: 0;
-  letter-spacing: 0.002em;
-}
-
-p{ margin: 0; }
-
-.wrap{
-  max-width: var(--wrap);
-  margin: 0 auto;
-  padding: 0 28px;
-}
-
-section{ position: relative; }
-
-.eyebrow{
-  font-family: var(--body);
-  font-size: 0.92rem;
-  color: var(--text-dim);
-  max-width: 46ch;
-}
-
-.section-head{
-  max-width: 620px;
-  margin-bottom: 48px;
-}
-
-.section-head h2{
-  font-size: clamp(2rem, 4vw, 2.9rem);
-  margin-bottom: 14px;
-}
-
-.section-head p{
-  color: var(--text-dim);
-  font-size: 1.05rem;
-  max-width: 52ch;
-}
-
-.btn{
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-family: var(--body);
-  font-weight: 600;
-  font-size: 0.98rem;
-  padding: 13px 22px;
-  border-radius: 10px;
-  text-decoration: none;
-  border: 1px solid transparent;
-  cursor: pointer;
-  transition: background-color 160ms ease, color 160ms ease, border-color 160ms ease;
-}
-
-.btn-primary{
-  background: var(--primary);
-  color: #FFFFFF;
-}
-.btn-primary:hover{ background: var(--primary-hover); }
-
-.btn-ghost{
-  background: transparent;
-  color: var(--text);
-  border-color: var(--line);
-}
-.btn-ghost:hover{ background: var(--bg-alt); border-color: var(--text-dim); }
-
-:focus-visible{
-  outline: 2px solid var(--accent);
-  outline-offset: 3px;
-}
-
-@media (prefers-reduced-motion: reduce){
-  *{ animation: none !important; transition: none !important; scroll-behavior: auto !important; }
-}
-
-/* ============================================================
-   NAV
-   ============================================================ */
-.nav{
-  position: sticky;
-  top: 0;
-  z-index: 40;
-  background: rgba(8,10,12,0.88);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--line-soft);
-}
-
-.nav .wrap{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 72px;
-}
-
-.nav-brand{
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  text-decoration: none;
-}
-
-.brand-mark{
-  width: 30px;
-  height: 30px;
-  border-radius: 10px;
-  flex-shrink: 0;
-  overflow: hidden;
-  background: var(--bg-card);
-  border: 1px solid var(--line);
-}
-.brand-mark img{ width: 100%; height: 100%; object-fit: cover; }
-.brand-mark.is-empty{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.brand-mark .mono{
-  display: none;
-  font-family: var(--display);
-  font-weight: 700;
-  font-size: 0.85rem;
-  color: var(--primary);
-}
-.brand-mark.is-empty .mono{ display: block; }
-.brand-mark.is-empty img{ display: none; }
-
-.nav-mark{
-  font-family: var(--display);
-  font-weight: 700;
-  font-size: 1.15rem;
-  color: var(--primary);
-  letter-spacing: 0.005em;
-}
-
-.nav-links{
-  display: flex;
-  align-items: center;
-  gap: 30px;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.nav-links a{
-  text-decoration: none;
-  color: var(--text-dim);
-  font-size: 0.95rem;
-  transition: color 150ms ease;
-}
-.nav-links a:hover{ color: var(--text); }
-
-.nav-cta{ display: flex; align-items: center; gap: 22px; }
-
-.nav-toggle-label{
-  display: none;
-  width: 30px;
-  height: 22px;
-  position: relative;
-  cursor: pointer;
-}
-.nav-toggle-label span,
-.nav-toggle-label span::before,
-.nav-toggle-label span::after{
-  content: "";
-  position: absolute;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: var(--text);
-  transition: transform 180ms ease, opacity 180ms ease;
-}
-.nav-toggle-label span{ top: 10px; }
-.nav-toggle-label span::before{ top: -8px; }
-.nav-toggle-label span::after{ top: 8px; }
-
-#nav-toggle{ display: none; }
-
-@media (max-width: 860px){
-  .nav-links{
-    position: absolute;
-    top: 72px;
-    left: 0;
-    right: 0;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0;
-    background: var(--bg);
-    border-bottom: 1px solid var(--line);
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 220ms ease;
-  }
-  .nav-links li{ width: 100%; }
-  .nav-links a{
-    display: block;
-    padding: 16px 28px;
-    border-top: 1px solid var(--line-soft);
-  }
-  #nav-toggle:checked ~ .wrap .nav-links{ max-height: 320px; }
-  .nav-toggle-label{ display: block; }
-  #nav-toggle:checked ~ .wrap .nav-toggle-label span{ background: transparent; }
-  #nav-toggle:checked ~ .wrap .nav-toggle-label span::before{ transform: translateY(8px) rotate(45deg); }
-  #nav-toggle:checked ~ .wrap .nav-toggle-label span::after{ transform: translateY(-8px) rotate(-45deg); }
-  .nav-cta .btn-ghost{ display: none; }
-}
-
-/* ============================================================
-   PHONE MOCKUPS / SCREENSHOT SLOTS
-   ============================================================ */
-.phone{
-  width: 260px;
-  aspect-ratio: 9 / 19.5;
-  background: #0C0D10;
-  border-radius: 34px;
-  padding: 10px;
-  box-shadow: 0 30px 60px -20px rgba(0,0,0,0.65), 0 0 0 1px rgba(255,255,255,0.04);
-  flex-shrink: 0;
-}
-
-.phone__notch{
-  position: absolute;
-  top: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 34%;
-  height: 18px;
-  background: #0C0D10;
-  border-radius: 0 0 12px 12px;
-  z-index: 2;
-}
-
-.phone__screen{
-  position: relative;
-  width: 100%;
-  height: 100%;
-  border-radius: 24px;
-  overflow: hidden;
-  background: linear-gradient(160deg, #1C222C, #0E1116);
-}
-
-.phone__screen img{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.shot-empty-label{
-  position: absolute;
-  inset: 0;
-  display: none;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 20px;
-  text-align: center;
-  background-image:
-    repeating-linear-gradient(135deg, rgba(255,255,255,0.04) 0 2px, transparent 2px 14px);
-}
-
-.shot-empty-label .mark{
-  width: 34px;
-  height: 34px;
-  border: 1.5px solid var(--text-dim);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--text-dim);
-  font-family: var(--display);
-  font-size: 1rem;
-}
-
-.shot-empty-label .name{
-  font-size: 0.82rem;
-  color: var(--text-dim);
-  line-height: 1.4;
-}
-
-.shot-empty-label code{
-  font-family: var(--body);
-  font-size: 0.76rem;
-  color: var(--accent);
-  background: rgba(18,211,147,0.12);
-  padding: 2px 6px;
-  border-radius: 4px;
-}
-
-.phone__screen.is-empty img{ display: none; }
-.phone__screen.is-empty .shot-empty-label{ display: flex; }
-
-/* rectangular (non-phone) screenshot tile, used in the feature grid */
-.tile-shot{
-  position: relative;
-  width: 100%;
-  aspect-ratio: 16 / 10;
-  border-radius: var(--radius);
-  overflow: hidden;
-  background: linear-gradient(160deg, #1C222C, #0E1116);
-  border: 1px solid var(--line);
-}
-.tile-shot img{ width: 100%; height: 100%; object-fit: cover; }
-.tile-shot.is-empty img{ display: none; }
-.tile-shot .shot-empty-label{ padding: 14px; }
-.tile-shot.is-empty .shot-empty-label{ display: flex; }
-
-/* ============================================================
-   HERO
-   ============================================================ */
-.hero{
-  padding: 84px 0 100px;
-  overflow: hidden;
-}
-
-.hero .wrap{
-  display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
-  gap: 56px;
-  align-items: center;
-}
-
-.hero-eyebrow{
-  color: var(--primary);
-  font-weight: 600;
-  font-size: 0.92rem;
-  margin-bottom: 18px;
-}
-
-.hero h1{
-  font-size: clamp(2.6rem, 5.4vw, 4.1rem);
-  margin-bottom: 22px;
-}
-
-.hero p.lede{
-  color: var(--text-dim);
-  font-size: 1.15rem;
-  max-width: 46ch;
-  margin-bottom: 34px;
-}
-
-.hero-actions{
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  flex-wrap: wrap;
-  margin-bottom: 40px;
-}
-
-.hero-note{
-  font-size: 0.88rem;
-  color: var(--text-dim);
-}
-.hero-note code{
-  font-family: var(--body);
-  color: var(--text);
-  border-bottom: 1px dashed rgba(18,211,147,0.5);
-}
-
-.hero-stage{
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 480px;
-}
-
-.hero-stage .phone{
-  position: absolute;
-}
-
-.hero-stage .phone.back{
-  width: 220px;
-  transform: rotate(7deg) translate(64px, 26px);
-  filter: brightness(0.72);
-  z-index: 1;
-}
-
-.hero-stage .phone.front{
-  transform: rotate(-4deg);
-  z-index: 2;
-}
-
-.spec-card{
-  position: absolute;
-  right: -6px;
-  bottom: 18px;
-  width: 216px;
-  background: var(--bg-card);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  padding: 18px 18px 16px;
-  z-index: 3;
-  box-shadow: 0 20px 40px -18px rgba(0,0,0,0.6);
-}
-
-.spec-card h3{
-  font-family: var(--body);
-  font-weight: 600;
-  font-size: 0.82rem;
-  color: var(--text-dim);
-  margin-bottom: 12px;
-}
-
-.spec-row{
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
-  font-size: 0.85rem;
-  padding: 7px 0;
-  border-top: 1px solid var(--line-soft);
-}
-.spec-row:first-of-type{ border-top: none; }
-.spec-row span:first-child{ color: var(--text-dim); }
-.spec-row span:last-child{ font-weight: 600; text-align: right; }
-
-@media (max-width: 940px){
-  .hero .wrap{ grid-template-columns: 1fr; }
-  .hero-stage{ min-height: 420px; margin-top: 10px; }
-  .spec-card{ right: 6px; }
-}
-
-@media (max-width: 520px){
-  .hero-stage .phone{ width: 200px; }
-  .hero-stage .phone.back{ display: none; }
-  .spec-card{ position: static; margin-top: 22px; width: 100%; }
-  .hero-stage{ min-height: 320px; }
-}
-
-/* ============================================================
-   TRAINING STYLES
-   ============================================================ */
-.styles{
-  background: var(--bg-alt);
-  padding: 100px 0;
-}
-
-.styles-grid{
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 18px;
-}
-
-.style-card{
-  background: var(--card-tint, var(--bg-card));
-  border: 1px solid var(--card-border, var(--line));
-  border-radius: var(--radius);
-  padding: 28px 24px 30px;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-
-.style-card.c-accent{ --card-tint: rgba(18,211,147,0.06);  --card-border: rgba(18,211,147,0.35);  --kicker-color: var(--accent); }
-.style-card.c-orange{ --card-tint: rgba(247,169,59,0.06);  --card-border: rgba(247,169,59,0.35);  --kicker-color: var(--orange); }
-.style-card.c-primary{--card-tint: rgba(31,143,255,0.07);  --card-border: rgba(31,143,255,0.4);   --kicker-color: var(--primary); }
-.style-card.c-purple{ --card-tint: rgba(177,82,224,0.06);  --card-border: rgba(177,82,224,0.35);  --kicker-color: var(--purple); }
-
-.style-card .kicker{
-  font-size: 0.82rem;
-  color: var(--kicker-color, var(--accent));
-  font-weight: 600;
-}
-
-.style-card h3{
-  font-size: 1.5rem;
-  font-weight: 700;
-}
-
-.style-card p{
-  color: var(--text-dim);
-  font-size: 0.94rem;
-}
-
-@media (max-width: 860px){
-  .styles-grid{ grid-template-columns: repeat(2, 1fr); }
-}
-@media (max-width: 520px){
-  .styles-grid{ grid-template-columns: 1fr; }
-}
-
-/* ============================================================
-   HOW IT ADAPTS
-   ============================================================ */
-.adapts{ padding: 110px 0; }
-
-.adapts .wrap{
-  display: grid;
-  grid-template-columns: 0.95fr 1.05fr;
-  gap: 64px;
-  align-items: center;
-}
-
-.adapts-list{
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-}
-
-.adapts-list li{
-  display: flex;
-  gap: 16px;
-  padding: 20px 0;
-  border-top: 1px solid var(--line-soft);
-}
-.adapts-list li:first-child{ border-top: none; padding-top: 0; }
-
-.adapts-mark{
-  flex-shrink: 0;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  border: 1px solid var(--line);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.adapts-mark svg{ width: 15px; height: 15px; stroke: var(--accent); }
-
-.adapts-copy h4{
-  font-family: var(--body);
-  font-weight: 600;
-  font-size: 1.02rem;
-  margin: 0 0 4px;
-}
-.adapts-copy p{
-  color: var(--text-dim);
-  font-size: 0.92rem;
-}
-
-.adapts-stage{ display: flex; justify-content: center; }
-
-@media (max-width: 860px){
-  .adapts .wrap{ grid-template-columns: 1fr; }
-  .adapts-stage{ margin-top: 12px; }
-}
-
-/* ============================================================
-   NUTRITION
-   ============================================================ */
-.nutrition{
-  background: var(--bg-alt);
-  padding: 110px 0;
-}
-
-.nutrition .wrap{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 64px;
-  align-items: center;
-}
-
-.macro-card{
-  background: var(--bg-card);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  padding: 30px;
-  display: flex;
-  align-items: center;
-  gap: 30px;
-}
-
-.macro-ring{
-  width: 128px;
-  height: 128px;
-  border-radius: 50%;
-  flex-shrink: 0;
-  background: conic-gradient(
-    var(--primary) 0 35%,
-    var(--accent) 35% 75%,
-    var(--orange) 75% 100%
-  );
-  position: relative;
-}
-.macro-ring::after{
-  content: "";
-  position: absolute;
-  inset: 14px;
-  border-radius: 50%;
-  background: var(--bg-card);
-}
-
-.macro-legend{ display: flex; flex-direction: column; gap: 10px; }
-.macro-legend .row{ display: flex; align-items: center; gap: 10px; font-size: 0.92rem; }
-.macro-legend .dot{ width: 10px; height: 10px; border-radius: 3px; flex-shrink: 0; }
-.macro-legend .dot.protein{ background: var(--primary); }
-.macro-legend .dot.carbs{ background: var(--accent); }
-.macro-legend .dot.fat{ background: var(--orange); }
-.macro-legend small{ display: block; color: var(--text-dim); font-size: 0.78rem; margin-top: 6px; }
-
-@media (max-width: 860px){
-  .nutrition .wrap{ grid-template-columns: 1fr; }
-}
-
-/* ============================================================
-   FEATURES GRID
-   ============================================================ */
-.features{ padding: 110px 0; }
-
-.features-grid{
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px 32px;
-}
-
-.feature-card h3{
-  font-family: var(--body);
-  font-weight: 600;
-  font-size: 1.08rem;
-  margin: 16px 0 8px;
-}
-
-.feature-card p{
-  color: var(--text-dim);
-  font-size: 0.92rem;
-}
-
-@media (max-width: 860px){
-  .features-grid{ grid-template-columns: repeat(2, 1fr); }
-}
-@media (max-width: 560px){
-  .features-grid{ grid-template-columns: 1fr; }
-}
-
-/* ============================================================
-   CTA BAND
-   ============================================================ */
-.cta{
-  background: var(--bg-card);
-  border-top: 1px solid var(--line-soft);
-  padding: 100px 0;
-  text-align: left;
-}
-
-.cta .wrap{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 40px;
-  flex-wrap: wrap;
-}
-
-.cta h2{
-  font-size: clamp(2rem, 4vw, 2.8rem);
-  max-width: 16ch;
-}
-
-.cta-right{ display: flex; flex-direction: column; gap: 16px; align-items: flex-start; }
-
-.cta-url{
-  font-size: 0.9rem;
-  color: var(--text-dim);
-}
-.cta-url a{ color: var(--accent); text-decoration: none; border-bottom: 1px dashed rgba(18,211,147,0.5); }
-
-/* ============================================================
-   FOOTER
-   ============================================================ */
-footer{
-  padding: 48px 0;
-  border-top: 1px solid var(--line-soft);
-}
-
-footer .wrap{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 18px;
-}
-
-.footer-mark{
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-family: var(--display);
-  font-weight: 700;
-  font-size: 1.05rem;
-  color: var(--primary);
-}
-
-.footer-links{
-  display: flex;
-  gap: 24px;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  flex-wrap: wrap;
-}
-.footer-links a{
-  color: var(--text-dim);
-  text-decoration: none;
-  font-size: 0.9rem;
-}
-.footer-links a:hover{ color: var(--text); }
-
-.footer-fine{
-  color: var(--text-dim);
-  font-size: 0.82rem;
-}
-
-/* ============================================================
-   ENTRANCE (one moment, hero only)
-   ============================================================ */
-.hero-stage .phone,
-.spec-card{
-  opacity: 0;
-  animation: rise 700ms ease forwards;
-}
-.hero-stage .phone.back{ animation-delay: 60ms; }
-.hero-stage .phone.front{ animation-delay: 160ms; }
-.spec-card{ animation-delay: 320ms; }
-
-@keyframes rise{
-  from{ opacity: 0; transform: translateY(16px) rotate(var(--rot, 0deg)); }
-  to{ opacity: 1; }
-}
-
+:root{--bg:#080A0C;--bg2:#0D1014;--card:#12171D;--card2:#171C23;--line:#252C35;--soft:rgba(255,255,255,.06);--text:#F2F5F8;--muted:#858D9C;--blue:#1F8FFF;--blue2:#59AEFF;--green:#12D393;--orange:#F7A93B;--purple:#B152E0;--display:"Space Grotesk",sans-serif;--body:"Inter",sans-serif;--max:1180px;--radius:20px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 78% 3%,rgba(31,143,255,.12),transparent 30rem),radial-gradient(circle at 8% 20%,rgba(18,211,147,.055),transparent 25rem),var(--bg);color:var(--text);font-family:var(--body);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.3;background-image:linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);background-size:48px 48px;mask-image:linear-gradient(to bottom,black,transparent 75%)}img{max-width:100%;display:block}a{color:inherit}button{font:inherit}h1,h2,h3,h4{font-family:var(--display);line-height:1.03;margin:0;letter-spacing:-.03em}p{margin:0}.wrap{max-width:var(--max);margin:auto;padding:0 28px}section{position:relative}.eyebrow{display:inline-flex;align-items:center;gap:8px;color:var(--green);font-size:.78rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase}.eyebrow:before{content:"";width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 18px rgba(18,211,147,.8)}.section-head{max-width:730px;margin-bottom:44px}.section-head h2{font-size:clamp(2.2rem,4.5vw,3.45rem);margin:10px 0 15px}.section-head p{color:var(--muted);font-size:1.02rem;max-width:64ch}.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:49px;padding:0 20px;border-radius:11px;text-decoration:none;font-weight:800;font-size:.93rem;border:1px solid transparent;transition:transform .18s,background .18s,border-color .18s,box-shadow .18s}.btn:hover{transform:translateY(-2px)}.btn-primary{background:var(--blue);color:#fff;box-shadow:0 14px 35px rgba(31,143,255,.18)}.btn-primary:hover{background:var(--blue2);box-shadow:0 18px 42px rgba(31,143,255,.28)}.btn-ghost{border-color:var(--line);background:rgba(255,255,255,.02)}.btn-ghost:hover{border-color:#4A5260;background:rgba(255,255,255,.045)}.btn svg{width:17px;height:17px}:focus-visible{outline:2px solid var(--green);outline-offset:4px}@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+/* NAV */
+.nav{position:sticky;top:0;z-index:100;background:rgba(8,10,12,.8);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.055)}.nav .wrap{height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{display:flex;align-items:center;gap:11px;text-decoration:none;white-space:nowrap}.logo{width:35px;height:35px;border-radius:10px;object-fit:cover;border:1px solid rgba(255,255,255,.12);box-shadow:0 6px 20px rgba(0,0,0,.3)}.brand-name{font-family:var(--display);font-weight:700;font-size:1.08rem}.nav-links{display:flex;align-items:center;gap:27px;list-style:none;margin:0;padding:0}.nav-links a{font-size:.88rem;color:var(--muted);text-decoration:none}.nav-links a:hover{color:var(--text)}.nav-actions{display:flex;align-items:center;gap:10px}.nav-actions .btn{min-height:42px;padding:0 16px;font-size:.86rem}.menu{display:none;background:none;border:0;color:var(--text);padding:7px;cursor:pointer}.menu svg{width:25px;height:25px}
+/* HERO */
+.hero{padding:88px 0 78px}.hero .wrap{display:grid;grid-template-columns:1.02fr .98fr;gap:65px;align-items:center}.hero-copy h1{font-size:clamp(3.05rem,6.2vw,5.35rem);max-width:11ch;margin:14px 0 24px}.gradient{background:linear-gradient(100deg,#fff 12%,#9DCEFF 55%,#12D393 100%);-webkit-background-clip:text;background-clip:text;color:transparent}.lede{font-size:1.12rem;color:var(--muted);max-width:61ch}.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin:31px 0 20px}.micro-proof{display:flex;flex-wrap:wrap;gap:15px;color:#9BA3B0;font-size:.8rem}.micro-proof span{display:inline-flex;align-items:center;gap:7px}.check{width:17px;height:17px;border-radius:50%;display:grid;place-items:center;background:rgba(18,211,147,.12);color:var(--green)}.check svg{width:10px;height:10px}
+/* MEDIA */
+.media-slot{position:relative;display:flex;align-items:center;justify-content:center;min-height:420px;border:1px dashed #3A4654;border-radius:28px;background:linear-gradient(145deg,#11161C,#0D1014);overflow:hidden;box-shadow:0 30px 90px rgba(0,0,0,.3)}.media-slot:before{content:"";position:absolute;inset:13px;border:1px solid rgba(255,255,255,.045);border-radius:21px;pointer-events:none}.media-slot .slot-content{position:relative;z-index:1;text-align:center;padding:30px;max-width:430px}.slot-label{font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:var(--blue2);font-weight:800;margin-bottom:10px}.media-slot strong{display:block;font-family:var(--display);font-size:1.2rem;margin-bottom:8px}.media-slot p{font-size:.78rem;color:var(--muted);line-height:1.65}.media-slot code{display:none}.hero-media{min-height:585px;max-width:470px;margin-left:auto;width:100%}
+/* TRUST */
+.trust{border-top:1px solid var(--soft);border-bottom:1px solid var(--soft);background:rgba(255,255,255,.018)}.trust .wrap{min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}.trust-item{display:flex;align-items:center;gap:9px;color:#9AA2AE;font-size:.8rem}.trust-item strong{color:var(--text)}.dot{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 12px rgba(18,211,147,.6)}
+/* PRODUCT PREVIEW */
+.showcase{padding:110px 0 116px}.showcase-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:16px}.showcase-grid .media-slot{min-height:500px}.showcase-stack{display:grid;gap:16px}.showcase-stack .media-slot{min-height:242px}
+/* STYLES */
+.styles{padding:112px 0;background:linear-gradient(180deg,rgba(255,255,255,.02),transparent)}.styles-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}.style-card{position:relative;overflow:hidden;min-height:255px;padding:24px;border:1px solid var(--line);border-radius:var(--radius);background:linear-gradient(150deg,rgba(255,255,255,.035),rgba(255,255,255,.012));transition:transform .2s,border-color .2s}.style-card:hover{transform:translateY(-5px);border-color:#3B444F}.style-card:after{content:"";position:absolute;width:130px;height:130px;border-radius:50%;right:-50px;top:-55px;background:var(--tint);filter:blur(18px)}.style-card .num{font-size:.66rem;color:var(--kicker);font-weight:800;letter-spacing:.08em}.style-card h3{font-size:1.48rem;margin:53px 0 12px;max-width:10ch}.style-card p{font-size:.84rem;color:var(--muted)}.c1{--tint:rgba(18,211,147,.18);--kicker:var(--green)}.c2{--tint:rgba(247,169,59,.18);--kicker:var(--orange)}.c3{--tint:rgba(31,143,255,.2);--kicker:var(--blue2)}.c4{--tint:rgba(177,82,224,.18);--kicker:var(--purple)}
+/* PERSONALIZATION */
+.adapt{padding:116px 0}.adapt .wrap{display:grid;grid-template-columns:.92fr 1.08fr;gap:78px;align-items:center}.adapt-list{display:grid;gap:9px}.adapt-row{display:grid;grid-template-columns:40px 1fr;gap:15px;padding:16px;border:1px solid transparent;border-radius:15px}.adapt-row:hover{background:rgba(255,255,255,.025);border-color:var(--line)}.adapt-icon{width:40px;height:40px;border-radius:12px;background:#141920;border:1px solid #272E38;display:grid;place-items:center;color:var(--green)}.adapt-icon svg{width:18px;height:18px}.adapt-row h4{font-family:var(--body);font-size:.95rem;margin:1px 0 4px;letter-spacing:0}.adapt-row p{font-size:.81rem;color:var(--muted)}.adapt-panel{position:relative;padding:26px;border-radius:24px;border:1px solid var(--line);background:radial-gradient(circle at 80% 10%,rgba(31,143,255,.1),transparent 30%),#0F1318;box-shadow:0 30px 70px rgba(0,0,0,.25)}.panel-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:22px}.panel-head h3{font-size:1.05rem}.pill{font-size:.64rem;padding:5px 9px;border-radius:99px;color:var(--green);background:rgba(18,211,147,.08);border:1px solid rgba(18,211,147,.2)}.profile{display:grid;grid-template-columns:1fr 1fr;gap:10px}.field{padding:13px;border-radius:12px;background:#171C23;border:1px solid #252B34}.field span{display:block;font-size:.6rem;color:#737D8B;margin-bottom:4px}.field strong{font-size:.79rem}.generated{margin-top:12px;padding:15px;border-radius:14px;border:1px solid rgba(31,143,255,.22);background:rgba(31,143,255,.055)}.generated .g-title{font-size:.66rem;color:var(--blue2);font-weight:700}.generated h4{font-size:1.05rem;margin:5px 0 12px}.generated-row{display:flex;align-items:center;gap:9px;padding:8px 0;border-top:1px solid rgba(255,255,255,.06);font-size:.69rem}.generated-row b{margin-left:auto;color:#A9B1BD;font-weight:500}.timeline{margin-top:15px;display:grid;grid-template-columns:repeat(4,1fr);gap:7px}.day{padding:9px 5px;text-align:center;border-radius:9px;background:#171C23;font-size:.59rem;color:#7E8794}.day.active{color:white;background:rgba(18,211,147,.11);border:1px solid rgba(18,211,147,.22)}
+/* NUTRITION */
+.nutrition{padding:116px 0;background:linear-gradient(180deg,rgba(255,255,255,.018),rgba(255,255,255,.025))}.nutrition .wrap{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}.nutrition-media{min-height:455px}.benefit-panel{padding:28px;border-radius:22px;border:1px solid var(--line);background:#11151A}.benefit-panel h3{font-size:1.8rem;margin-top:13px}.benefit-panel>p{color:var(--muted);margin-top:10px}.benefit-list{display:grid;gap:4px;margin-top:22px}.benefit-list .adapt-row{padding:12px 0}
+/* FEATURES */
+.features{padding:116px 0}.feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.feature{padding:22px;border:1px solid var(--line);border-radius:var(--radius);background:rgba(255,255,255,.018);transition:transform .2s,border-color .2s}.feature:hover{transform:translateY(-4px);border-color:#38414D}.feature-icon{width:43px;height:43px;border-radius:13px;display:grid;place-items:center;background:#151A21;color:var(--accent,var(--blue));border:1px solid #262D36}.feature-icon svg{width:20px;height:20px}.feature h3{font-size:1.03rem;margin:17px 0 7px;letter-spacing:-.01em}.feature p{font-size:.83rem;color:var(--muted)}
+/* KAEL */
+.kael-section{padding:112px 0;background:#0D1116;border-top:1px solid var(--soft);border-bottom:1px solid var(--soft)}.kael-section .wrap{display:grid;grid-template-columns:.95fr 1.05fr;gap:70px;align-items:center}.kael-media{min-height:500px}.kael-copy h2{font-size:clamp(2.3rem,4.6vw,3.5rem);margin:10px 0 18px;max-width:12ch}.kael-copy p{color:var(--muted);font-size:1.01rem;max-width:56ch}.kael-points{display:grid;gap:10px;margin-top:24px}.kael-point{display:flex;gap:9px;align-items:flex-start;font-size:.84rem;color:#B3BBC7}.kael-point b{color:var(--green)}
+/* FAQ / SEO */
+.faq{padding:108px 0}.faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}.faq-item{padding:22px;border:1px solid var(--line);border-radius:17px;background:rgba(255,255,255,.018)}.faq-item h3{font-size:1rem;margin-bottom:9px}.faq-item p{font-size:.82rem;color:var(--muted)}
+/* CTA */
+.cta{padding:0 0 105px}.cta-box{position:relative;overflow:hidden;padding:64px 60px;border-radius:26px;border:1px solid rgba(31,143,255,.25);background:radial-gradient(circle at 80% 15%,rgba(18,211,147,.11),transparent 25rem),radial-gradient(circle at 10% 100%,rgba(31,143,255,.14),transparent 24rem),#11161C;display:flex;align-items:center;justify-content:space-between;gap:40px}.cta-box h2{font-size:clamp(2.4rem,4.8vw,3.8rem);max-width:13ch}.cta-box p{color:var(--muted);max-width:49ch;margin-top:13px}.cta-actions{display:flex;flex-direction:column;align-items:flex-start;gap:10px;flex:none}.cta-actions small{font-size:.68rem;color:#707987}
+/* FOOTER */
+footer{border-top:1px solid var(--soft);padding:44px 0 32px}.footer-top{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}.footer-brand p{color:var(--muted);font-size:.76rem;max-width:34ch;margin-top:10px}.footer-links{display:flex;gap:22px;list-style:none;margin:0;padding:0;flex-wrap:wrap}.footer-links a{color:var(--muted);font-size:.78rem;text-decoration:none}.footer-links a:hover{color:var(--text)}.footer-bottom{border-top:1px solid var(--soft);margin-top:30px;padding-top:18px;color:#606978;font-size:.68rem;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .65s ease,transform .65s ease}.reveal.visible{opacity:1;transform:none}
+@media(max-width:980px){.nav-links{display:none}.menu{display:block}.nav.open .nav-links{display:flex;position:absolute;left:0;right:0;top:72px;padding:10px 28px 18px;flex-direction:column;align-items:stretch;gap:0;background:rgba(8,10,12,.97);border-bottom:1px solid var(--line)}.nav.open .nav-links a{display:block;padding:12px 0}.nav-actions .btn-ghost{display:none}.hero .wrap,.adapt .wrap,.nutrition .wrap,.kael-section .wrap{grid-template-columns:1fr}.hero-copy{max-width:800px}.hero-media{margin:0 auto;max-width:500px}.styles-grid{grid-template-columns:repeat(2,1fr)}.feature-grid{grid-template-columns:repeat(2,1fr)}.faq-grid{grid-template-columns:1fr 1fr}.cta-box{padding:48px 38px}}
+@media(max-width:620px){.wrap{padding:0 18px}.nav .wrap{height:64px}.nav.open .nav-links{top:64px;padding-left:18px;padding-right:18px}.brand-name{font-size:1rem}.nav-actions .btn-primary{min-height:40px;padding:0 13px}.hero{padding:62px 0 70px}.hero-copy h1{font-size:clamp(2.75rem,13vw,4rem)}.hero-actions .btn{width:100%}.micro-proof{gap:9px;display:grid}.hero-media{min-height:470px}.showcase,.styles,.adapt,.nutrition,.features,.kael-section,.faq{padding:78px 0}.showcase-grid{grid-template-columns:1fr}.showcase-grid .media-slot{min-height:410px}.showcase-stack{grid-template-columns:1fr}.showcase-stack .media-slot{min-height:250px}.section-head{margin-bottom:32px}.section-head h2{font-size:2.25rem}.styles-grid,.feature-grid,.faq-grid{grid-template-columns:1fr}.style-card{min-height:220px}.style-card h3{margin-top:42px}.profile{grid-template-columns:1fr 1fr}.cta{padding-bottom:78px}.cta-box{padding:38px 25px;display:block}.cta-actions{margin-top:25px}.cta-actions .btn{width:100%}.footer-top{display:block}.footer-links{margin-top:25px}}
 </style>
 </head>
 <body>
-
-<!-- ============================================================
-     NAV
-     ============================================================ -->
-<input type="checkbox" id="nav-toggle">
-<header class="nav">
+<header class="nav" id="nav">
   <div class="wrap">
-    <a class="nav-brand" href="#top">
-      <span class="brand-mark">
-        <img src="logo.jpg" alt="" onerror="this.parentElement.classList.add('is-empty')">
-        <span class="mono">W</span>
-      </span>
-      <span class="nav-mark">Washek Fitness</span>
-    </a>
-
-    <ul class="nav-links">
-      <li><a href="#styles">Training styles</a></li>
-      <li><a href="#adapts">How it adapts</a></li>
-      <li><a href="#nutrition">Nutrition</a></li>
-      <li><a href="#features">Everything else</a></li>
-    </ul>
-
-    <div class="nav-cta">
-      <a class="btn btn-ghost" href="#features">See what's inside</a>
-      <a class="btn btn-primary" href="https://washek-fitness.washekfitness.workers.dev">Open the app</a>
-    </div>
-
-    <label class="nav-toggle-label" for="nav-toggle" aria-label="Toggle menu"><span></span></label>
+    <a class="brand" href="#top" aria-label="Washek Fitness home"><img class="logo" src="data:image/jpeg;base64,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" alt="Washek Fitness logo"><span class="brand-name">Washek Fitness</span></a>
+    <nav aria-label="Primary navigation"><ul class="nav-links"><li><a href="#how">How it works</a></li><li><a href="#training">Training</a></li><li><a href="#nutrition">Nutrition</a></li><li><a href="#features">Features</a></li><li><a href="#kael">Kael AI</a></li></ul></nav>
+    <div class="nav-actions"><a class="btn btn-primary" href="https://washek-fitness.washekfitness.workers.dev">Get started <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a><button class="menu" id="menu" aria-label="Open navigation" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button></div>
   </div>
 </header>
-
 <main id="top">
-
-  <!-- ============================================================
-       HERO
-       ============================================================ -->
-  <section class="hero">
-    <div class="wrap">
-      <div>
-        <p class="hero-eyebrow">Washek Fitness</p>
-        <h1>A program built for your body, your equipment, and your goals.</h1>
-        <p class="lede">Washek Fitness writes your workouts and your macro targets around the equipment you have, any injuries or limits, your gender, and what you're actually training for — then adjusts every week as you go.</p>
-
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="https://washek-fitness.washekfitness.workers.dev">Open the app</a>
-          <a class="btn btn-ghost" href="#styles">See what's inside</a>
-        </div>
-
-        <p class="hero-note">No separate download or search needed — <code>washek-fitness.washekfitness.workers.dev</code> opens it directly.</p>
-      </div>
-
-      <div class="hero-stage">
-        <div class="phone back">
-          <div class="phone__notch"></div>
-          <div class="phone__screen">
-            <img src="screenshots/hero-secondary.png" alt="Washek Fitness nutrition screen" onerror="this.parentElement.classList.add('is-empty')">
-            <div class="shot-empty-label">
-              <span class="mark">2</span>
-              <span class="name">Screenshot</span>
-              <code>screenshots/hero-secondary.png</code>
-            </div>
-          </div>
-        </div>
-
-        <div class="phone front">
-          <div class="phone__notch"></div>
-          <div class="phone__screen">
-            <img src="screenshots/hero-primary.png" alt="Washek Fitness workout screen" onerror="this.parentElement.classList.add('is-empty')">
-            <div class="shot-empty-label">
-              <span class="mark">1</span>
-              <span class="name">Screenshot</span>
-              <code>screenshots/hero-primary.png</code>
-            </div>
-          </div>
-        </div>
-
-        <div class="spec-card">
-          <h3>Built for you</h3>
-          <div class="spec-row"><span>Equipment</span><span>Home, bands</span></div>
-          <div class="spec-row"><span>Limit</span><span>Left shoulder</span></div>
-          <div class="spec-row"><span>Goal</span><span>Hybrid strength</span></div>
-          <div class="spec-row"><span>Split</span><span>4 days / week</span></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       TRAINING STYLES
-       ============================================================ -->
-  <section class="styles" id="styles">
-    <div class="wrap">
-      <div class="section-head">
-        <h2>Four ways to train, one system underneath.</h2>
-        <p>Pick the style that fits how you want to train. The programming underneath — your goals, your equipment, your limits — carries over no matter which one you choose.</p>
-      </div>
-
-      <div class="styles-grid">
-        <div class="style-card c-accent">
-          <span class="kicker">Calisthenics</span>
-          <h3>Bodyweight, done in order</h3>
-          <p>Progressions from your first pull-up to one-arm work, sequenced around the equipment you actually have.</p>
-        </div>
-        <div class="style-card c-orange">
-          <span class="kicker">Weighted calisthenics</span>
-          <h3>Load added on purpose</h3>
-          <p>Vests, belts, and bands added to bodyweight movements once you outgrow them — without losing the skill work underneath.</p>
-        </div>
-        <div class="style-card c-primary">
-          <span class="kicker">Weight lifting</span>
-          <h3>Barbell and dumbbell</h3>
-          <p>Programming built around your gym's equipment and your experience level, from your first cycle to your tenth.</p>
-        </div>
-        <div class="style-card c-purple">
-          <span class="kicker">Hybrid</span>
-          <h3>Both, in one program</h3>
-          <p>Calisthenics and weights in the same week, when neither one alone fits how you want to train.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       HOW IT ADAPTS
-       ============================================================ -->
-  <section class="adapts" id="adapts">
-    <div class="wrap">
-      <div>
-        <div class="section-head" style="margin-bottom:34px;">
-          <h2>It asks about you before it writes anything.</h2>
-          <p>Every program starts from the same five questions — the answers are what actually shape the plan.</p>
-        </div>
-
-        <ul class="adapts-list">
-          <li>
-            <span class="adapts-mark"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4L4 14l6 6L20 10z"/></svg></span>
-            <div class="adapts-copy">
-              <h4>Equipment</h4>
-              <p>From a full gym to a resistance band on the living room floor.</p>
-            </div>
-          </li>
-          <li>
-            <span class="adapts-mark"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.35-9.5-9C1 8 3 4 7 4c2 0 4 1.5 5 3 1-1.5 3-3 5-3 4 0 6 4 4.5 8-2.5 4.65-9.5 9-9.5 9z"/></svg></span>
-            <div class="adapts-copy">
-              <h4>Injuries and limitations</h4>
-              <p>Movements are chosen — or built around — what your body can actually do right now.</p>
-            </div>
-          </li>
-          <li>
-            <span class="adapts-mark"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></span>
-            <div class="adapts-copy">
-              <h4>Gender</h4>
-              <p>Goals and recommendations are set with this in mind, not treated as one default body.</p>
-            </div>
-          </li>
-          <li>
-            <span class="adapts-mark"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></span>
-            <div class="adapts-copy">
-              <h4>Goals</h4>
-              <p>Strength, size, fat loss, or a specific skill — the plan is written toward one clear target.</p>
-            </div>
-          </li>
-          <li>
-            <span class="adapts-mark"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/></svg></span>
-            <div class="adapts-copy">
-              <h4>Other constraints</h4>
-              <p>How many days you can train, how long each session can run, and what your week actually looks like.</p>
-            </div>
-          </li>
-        </ul>
-      </div>
-
-      <div class="adapts-stage">
-        <div class="phone" style="position:static;">
-          <div class="phone__notch"></div>
-          <div class="phone__screen">
-            <img src="screenshots/onboarding.png" alt="Washek Fitness onboarding screen" onerror="this.parentElement.classList.add('is-empty')">
-            <div class="shot-empty-label">
-              <span class="mark">3</span>
-              <span class="name">Screenshot</span>
-              <code>screenshots/onboarding.png</code>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       NUTRITION
-       ============================================================ -->
-  <section class="nutrition" id="nutrition">
-    <div class="wrap">
-      <div>
-        <div class="section-head" style="margin-bottom:34px;">
-          <h2>Macro goals that match the plan, not a generic calculator.</h2>
-          <p>Your targets come from the same goals and constraints as your training. Scan a meal or a barcode and see how the day is actually going, without logging everything by hand.</p>
-        </div>
-
-        <div class="macro-card">
-          <div class="macro-ring" role="img" aria-label="Example macro split: 35 percent protein, 40 percent carbs, 25 percent fat"></div>
-          <div class="macro-legend">
-            <div class="row"><span class="dot protein"></span> Protein</div>
-            <div class="row"><span class="dot carbs"></span> Carbs</div>
-            <div class="row"><span class="dot fat"></span> Fat</div>
-            <small>Illustrative example — your split is set from your own goals.</small>
-          </div>
-        </div>
-      </div>
-
-      <div class="adapts-stage">
-        <div class="phone" style="position:static;">
-          <div class="phone__notch"></div>
-          <div class="phone__screen">
-            <img src="screenshots/food-scan.png" alt="Washek Fitness food scanning screen" onerror="this.parentElement.classList.add('is-empty')">
-            <div class="shot-empty-label">
-              <span class="mark">4</span>
-              <span class="name">Screenshot</span>
-              <code>screenshots/food-scan.png</code>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       FEATURES GRID
-       ============================================================ -->
-  <section class="features" id="features">
-    <div class="wrap">
-      <div class="section-head">
-        <h2>Everything around the workout, covered too.</h2>
-        <p>Training is the center of it, but the rest of the picture — how you're eating, how you're recovering, how you're actually moving — is built in.</p>
-      </div>
-
-      <div class="features-grid">
-
-        <div class="feature-card">
-          <div class="tile-shot">
-            <img src="screenshots/progress-photos.png" alt="Progress photo AI analysis screen" onerror="this.parentElement.classList.add('is-empty')">
-            <div class="shot-empty-label">
-              <span class="mark">5</span>
-              <span class="name">Screenshot</span>
-              <code>screenshots/progress-photos.png</code>
-            </div>
-          </div>
-          <h3>Progress photos, read by AI</h3>
-          <p>Snap a photo on your own schedule. Analysis tracks visible changes over time, not just the number on the scale.</p>
-        </div>
-
-        <div class="feature-card">
-          <div class="tile-shot">
-            <img src="screenshots/ai-chat.png" alt="AI coach chat screen" onerror="this.parentElement.classList.add('is-empty')">
-            <div class="shot-empty-label">
-              <span class="mark">6</span>
-              <span class="name">Screenshot</span>
-              <code>screenshots/ai-chat.png</code>
-            </div>
-          </div>
-          <h3>Kael, your AI coach</h3>
-          <p>Ask why a session looks the way it does, request a swap, or talk through a change — Kael has the context on your program.</p>
-        </div>
-
-        <div class="feature-card">
-          <div class="tile-shot">
-            <img src="screenshots/form-analysis.png" alt="Video form analysis screen" onerror="this.parentElement.classList.add('is-empty')">
-            <div class="shot-empty-label">
-              <span class="mark">7</span>
-              <span class="name">Screenshot</span>
-              <code>screenshots/form-analysis.png</code>
-            </div>
-          </div>
-          <h3>Form analysis, on video</h3>
-          <p>Upload or record a set and get feedback on how it looked, not just whether the rep counted.</p>
-        </div>
-
-        <div class="feature-card">
-          <div class="tile-shot">
-            <img src="screenshots/checkin.png" alt="Post-workout check-in screen" onerror="this.parentElement.classList.add('is-empty')">
-            <div class="shot-empty-label">
-              <span class="mark">8</span>
-              <span class="name">Screenshot</span>
-              <code>screenshots/checkin.png</code>
-            </div>
-          </div>
-          <h3>Post-workout check-in</h3>
-          <p>Log how a session actually felt — effort, soreness, energy — so the next one can adjust around it.</p>
-        </div>
-
-        <div class="feature-card">
-          <div class="tile-shot">
-            <img src="screenshots/weekly-update.png" alt="Weekly program update screen" onerror="this.parentElement.classList.add('is-empty')">
-            <div class="shot-empty-label">
-              <span class="mark">9</span>
-              <span class="name">Screenshot</span>
-              <code>screenshots/weekly-update.png</code>
-            </div>
-          </div>
-          <h3>Weekly updates</h3>
-          <p>Your program moves as your data does — check-ins, performance, and recovery all feed into the next week.</p>
-        </div>
-
-        <div class="feature-card">
-          <div class="tile-shot">
-            <img src="screenshots/live-tracking.png" alt="Live workout tracking screen" onerror="this.parentElement.classList.add('is-empty')">
-            <div class="shot-empty-label">
-              <span class="mark">10</span>
-              <span class="name">Screenshot</span>
-              <code>screenshots/live-tracking.png</code>
-            </div>
-          </div>
-          <h3>Live workout tracking</h3>
-          <p>Follow the plan set by set while you train, with weight, reps, and rest logged as you go.</p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       CTA
-       ============================================================ -->
-  <section class="cta">
-    <div class="wrap">
-      <h2>Your program is waiting.</h2>
-      <div class="cta-right">
-        <a class="btn btn-primary" href="https://washek-fitness.washekfitness.workers.dev">Open Washek Fitness</a>
-        <span class="cta-url">Or go directly to <a href="https://washek-fitness.washekfitness.workers.dev">washek-fitness.washekfitness.workers.dev</a></span>
-      </div>
-    </div>
-  </section>
-
-</main>
-
-<footer>
+<section class="hero">
   <div class="wrap">
-    <span class="footer-mark">
-      <span class="brand-mark">
-        <img src="logo.jpg" alt="" onerror="this.parentElement.classList.add('is-empty')">
-        <span class="mono">W</span>
-      </span>
-      Washek Fitness
-    </span>
-    <ul class="footer-links">
-      <li><a href="#styles">Training styles</a></li>
-      <li><a href="#adapts">How it adapts</a></li>
-      <li><a href="#nutrition">Nutrition</a></li>
-      <li><a href="#features">Everything else</a></li>
-      <li><a href="https://washek-fitness.washekfitness.workers.dev">Open the app</a></li>
-    </ul>
-    <span class="footer-fine">&copy; 2026 Washek Fitness</span>
+    <div class="hero-copy reveal">
+      <span class="eyebrow">Personalized fitness, built differently</span>
+      <h1>Training that starts with <span class="gradient">you.</span></h1>
+      <p class="lede">Washek Fitness brings personalized workouts, nutrition tools, progress tracking, and AI coaching together in one fitness app — built around your goals, equipment, experience, schedule, and preferences.</p>
+      <div class="hero-actions"><a class="btn btn-primary" href="https://washek-fitness.washekfitness.workers.dev">Start training <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a><a class="btn btn-ghost" href="#how">Explore how it works</a></div>
+      <div class="micro-proof"><span><i class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m6 12 4 4 8-9"/></svg></i>Calisthenics + weights + hybrid</span><span><i class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m6 12 4 4 8-9"/></svg></i>Personalized programming</span><span><i class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m6 12 4 4 8-9"/></svg></i>AI coaching with Kael</span></div>
+    </div>
+    <div class="media-slot hero-media reveal" aria-label="Washek Fitness app interface preview"><div class="slot-content"><div class="slot-label">Washek Fitness app</div><strong>Personalized training, at a glance.</strong><p></p></div></div>
   </div>
-</footer>
-
+</section>
+<section class="trust" aria-label="Washek Fitness benefits"><div class="wrap"><div class="trust-item"><span class="dot"></span><strong>Personalized</strong> from day one</div><div class="trust-item"><span class="dot"></span><strong>Adaptive</strong> as you progress</div><div class="trust-item"><span class="dot"></span><strong>AI-assisted</strong> coaching</div><div class="trust-item"><span class="dot"></span><strong>Training + nutrition</strong> in one app</div></div></section>
+<section class="showcase" id="screenshots">
+  <div class="wrap">
+    <div class="section-head reveal"><span class="eyebrow">Inside the app</span><h2>See the tools behind your training.</h2><p>A clear view of the experience — from your main dashboard to the program and progress tools that keep your training organized.</p></div>
+    <div class="showcase-grid"><div class="media-slot reveal" aria-label="Washek Fitness dashboard preview"><div class="slot-content"><div class="slot-label">App dashboard</div><strong>Dashboard</strong><p></p></div></div><div class="showcase-stack"><div class="media-slot reveal" aria-label="Washek Fitness program preview"><div class="slot-content"><div class="slot-label">Training</div><strong>Your program</strong><p></p></div></div><div class="media-slot reveal" aria-label="Washek Fitness progress preview"><div class="slot-content"><div class="slot-label">Progress</div><strong>Track your progress</strong><p></p></div></div></div></div>
+  </div>
+</section>
+<section class="styles" id="training">
+  <div class="wrap"><div class="section-head reveal"><span class="eyebrow">Training styles</span><h2>Train for strength, skills, or both.</h2><p>Choose the training approach that fits your goals and equipment, then build your routine around the way you actually train.</p></div>
+  <div class="styles-grid"><article class="style-card c1 reveal"><span class="num">01 / CALISTHENICS</span><h3>Master your bodyweight.</h3><p>Build training around bodyweight movements and calisthenics skill development.</p></article><article class="style-card c2 reveal"><span class="num">02 / WEIGHTED</span><h3>Add resistance.</h3><p>Use additional resistance to make bodyweight training progressively more challenging.</p></article><article class="style-card c3 reveal"><span class="num">03 / WEIGHTS</span><h3>Build strength and size.</h3><p>Use gym-based strength training when weights are part of your goals and setup.</p></article><article class="style-card c4 reveal"><span class="num">04 / HYBRID</span><h3>Combine your approach.</h3><p>Blend calisthenics and weight training into one structured program.</p></article></div></div>
+</section>
+<section class="adapt" id="how">
+  <div class="wrap"><div class="reveal"><div class="section-head"><span class="eyebrow">How it works</span><h2>Your plan starts with your real situation.</h2><p>Instead of starting from a one-size-fits-all routine, Washek Fitness uses the information you provide to shape your training experience.</p></div><div class="adapt-list">
+    <div class="adapt-row"><div class="adapt-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 8h16M7 5v6M17 5v6M4 16h16M9 13v6M15 13v6"/></svg></div><div><h4>Equipment</h4><p>Tell the app what equipment you have available so your training can reflect your setup.</p></div></div>
+    <div class="adapt-row"><div class="adapt-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-4.35-9.5-9C1 8 3 4 7 4c2 0 4 1.5 5 3 1-1.5 3-3 5-3 4 0 6 4 4.5 8-2.5 4.65-9.5 9-9.5 9z"/></svg></div><div><h4>Goals and preferences</h4><p>Your stated goals, training preferences, and experience help shape your program.</p></div></div>
+    <div class="adapt-row"><div class="adapt-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></div><div><h4>Your training profile</h4><p>Your profile gives the system more context than a generic workout template.</p></div></div>
+    <div class="adapt-row"><div class="adapt-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div><div><h4>Schedule and constraints</h4><p>Build around the days and time you actually have available.</p></div></div>
+  </div></div>
+  <div class="adapt-panel reveal"><div class="panel-head"><h3>Personalized program</h3><span class="pill">BUILT AROUND YOU</span></div><div class="profile"><div class="field"><span>TRAINING</span><strong>Hybrid</strong></div><div class="field"><span>EXPERIENCE</span><strong>Intermediate</strong></div><div class="field"><span>EQUIPMENT</span><strong>Home + bands</strong></div><div class="field"><span>GOAL</span><strong>Strength</strong></div><div class="field"><span>SCHEDULE</span><strong>4 days / week</strong></div><div class="field"><span>PREFERENCES</span><strong>Skill + strength</strong></div></div><div class="generated"><div class="g-title">PROGRAM</div><h4>Hybrid Strength · Week 4</h4><div class="generated-row">Upper strength <b>Today</b></div><div class="generated-row">Lower strength <b>Tomorrow</b></div><div class="generated-row">Skill + conditioning <b>Fri</b></div><div class="generated-row">Full body <b>Sun</b></div></div><div class="timeline"><div class="day active">MON<br><b>UPPER</b></div><div class="day">TUE<br><b>LOWER</b></div><div class="day">FRI<br><b>SKILL</b></div><div class="day">SUN<br><b>FULL</b></div></div></div></div>
+</section>
+<section class="nutrition" id="nutrition"><div class="wrap"><div class="reveal"><div class="section-head"><span class="eyebrow">Nutrition</span><h2>Keep nutrition connected to the rest of your fitness.</h2><p>Use nutrition tools alongside your training, including food and package scanning and macro tracking, so your daily nutrition has a place inside the same app.</p></div><div class="media-slot nutrition-media" aria-label="Washek Fitness nutrition interface preview"><div class="slot-content"><div class="slot-label">Nutrition</div><strong>Your nutrition dashboard</strong><p></p></div></div></div><div class="benefit-panel reveal"><span class="eyebrow">One place to stay consistent</span><h3>Less switching. More focus.</h3><p>Keep your training, nutrition, and progress information together instead of spreading your routine across multiple apps.</p><div class="benefit-list"><div class="adapt-row"><div class="adapt-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19V5M4 19h16"/><path d="m7 15 4-5 3 2 5-7"/></svg></div><div><h4>Nutrition tracking</h4><p>Keep an eye on food and macro information.</p></div></div><div class="adapt-row"><div class="adapt-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v18M3 12h18"/></svg></div><div><h4>Food and package scanning</h4><p>Use the app's scanning tools to capture nutrition information.</p></div></div></div></div></div></section>
+<section class="features" id="features"><div class="wrap"><div class="section-head reveal"><span class="eyebrow">Fitness tools</span><h2>Everything stays connected to your training.</h2><p>Washek Fitness combines planning, tracking, nutrition, progress, and AI-assisted tools in one place.</p></div><div class="feature-grid">
+  <article class="feature reveal" style="--accent:var(--green)"><div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 20h18"/><path d="M6 17V9M10 17V5M14 17v-7M18 17V3"/></svg></div><h3>Workout analytics</h3><p>Review training performance and progress over time.</p></article>
+  <article class="feature reveal" style="--accent:var(--blue)"><div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19V5M4 19h16"/><path d="m7 15 4-5 3 2 5-7"/></svg></div><h3>Progress photos</h3><p>Save and compare progress photos as part of your fitness journey.</p></article>
+  <article class="feature reveal" style="--accent:var(--purple)"><div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3 3 8l9 5 9-5-9-5Z"/><path d="m3 12 9 5 9-5M3 16l9 5 9-5"/></svg></div><h3>AI form analysis</h3><p>Eligible plans include calisthenics form analysis with video feedback, scoring, rep or hold counting, and corrective drills.</p></article>
+  <article class="feature reveal" style="--accent:var(--orange)"><div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-4.35-9.5-9C1 8 3 4 7 4c2 0 4 1.5 5 3 1-1.5 3-3 5-3 4 0 6 4 4.5 8-2.5 4.65-9.5 9-9.5 9z"/></svg></div><h3>Post-workout check-ins</h3><p>Record how training felt and add useful context to your workout history.</p></article>
+  <article class="feature reveal" style="--accent:var(--green)"><div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div><h3>Live workout tracking</h3><p>Track sets, reps, weight, and rest while you train.</p></article>
+  <article class="feature reveal" style="--accent:var(--blue)"><div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 5h16v14H4z"/><path d="M8 9h8M8 13h5"/></svg></div><h3>Workout adjustments</h3><p>On eligible plans, Kael can provide enhanced real-time guidance during an active workout.</p></article>
+</div></div></section>
+<section class="kael-section" id="kael"><div class="wrap"><div class="media-slot kael-media reveal" aria-label="Kael AI coaching preview"><div class="slot-content"><div class="slot-label">Kael AI</div><strong>AI coaching inside Washek Fitness.</strong><p></p></div></div><div class="kael-copy reveal"><span class="eyebrow">Meet Kael</span><h2>An AI coach built into your training app.</h2><p>Kael provides training-focused coaching using the context available in Washek Fitness, helping you get answers and guidance without leaving your training environment.</p><div class="kael-points"><div class="kael-point"><b>✓</b><span>Training guidance across calisthenics, weighted calisthenics, weights, and hybrid training</span></div><div class="kael-point"><b>✓</b><span>Coaching informed by the goals, preferences, and limitations you provide</span></div><div class="kael-point"><b>✓</b><span>Additional guidance and workout support available on eligible plans</span></div></div></div></div></section>
+<section class="faq" id="faq"><div class="wrap"><div class="section-head reveal"><span class="eyebrow">Questions</span><h2>Washek Fitness, explained.</h2><p>Quick answers for people deciding whether the app fits the way they train.</p></div><div class="faq-grid"><article class="faq-item reveal"><h3>What is Washek Fitness?</h3><p>Washek Fitness is a fitness app that combines personalized training, nutrition tools, progress tracking, and AI coaching in one place.</p></article><article class="faq-item reveal"><h3>Is Washek Fitness for calisthenics?</h3><p>Yes. The app supports calisthenics, weighted calisthenics, weights, and hybrid training approaches.</p></article><article class="faq-item reveal"><h3>Can I use Washek Fitness with home equipment?</h3><p>The app uses the equipment information you provide when shaping your training, making it suitable for different training setups.</p></article><article class="faq-item reveal"><h3>What is Kael?</h3><p>Kael is the AI coaching experience inside Washek Fitness, designed to provide training-focused guidance using available app context.</p></article><article class="faq-item reveal"><h3>Does Washek Fitness include nutrition tracking?</h3><p>Yes. Nutrition tools include macro tracking and food or package scanning features.</p></article><article class="faq-item reveal"><h3>Does Washek Fitness track progress?</h3><p>Yes. The app includes workout progress and analytics tools, as well as progress photo tracking.</p></article></div></div></section>
+<section class="cta"><div class="wrap"><div class="cta-box reveal"><div><span class="eyebrow">Start building your routine</span><h2>Your training should fit your life.</h2><p>Set up your Washek Fitness experience and start training with a plan built around your goals, equipment, experience, and schedule.</p></div><div class="cta-actions"><a class="btn btn-primary" href="https://washek-fitness.washekfitness.workers.dev">Open Washek Fitness <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a><small>Opens the Washek Fitness app.</small></div></div></div></section>
+</main>
+<footer><div class="wrap"><div class="footer-top"><div class="footer-brand"><a class="brand" href="#top"><img class="logo" src="data:image/jpeg;base64,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" alt="Washek Fitness logo"><span class="brand-name">Washek Fitness</span></a><p>Personalized training, nutrition, progress tracking, and AI coaching in one place.</p></div><ul class="footer-links"><li><a href="#how">How it works</a></li><li><a href="#training">Training</a></li><li><a href="#nutrition">Nutrition</a></li><li><a href="#features">Features</a></li><li><a href="#kael">Kael AI</a></li><li><a href="#faq">FAQ</a></li><li><a href="https://washek-fitness.washekfitness.workers.dev">Open app</a></li></ul></div><div class="footer-bottom"><span>© <span id="year">2026</span> Washek Fitness</span><span>Built around your training.</span></div></div></footer>
+<script>
+const nav=document.getElementById('nav');
+const menu=document.getElementById('menu');
+menu?.addEventListener('click',()=>{const open=nav.classList.toggle('open');menu.setAttribute('aria-expanded',open?'true':'false')});
+document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
+const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}})},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+document.getElementById('year').textContent=new Date().getFullYear();
+</script>
 </body>
 </html>
