@@ -1,13 +1,1086 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Washek Fitness — Workouts built around you</title>
-<meta name="description" content="Washek Fitness builds custom workouts and macro goals based on your equipment, injuries, and goals — with AI coaching for nutrition, form, and progress." />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Washek Fitness — A program built for your body</title>
+<meta name="description" content="Washek Fitness designs your workouts and macros around your equipment, injuries, gender, goals, and constraints — calisthenics, weighted calisthenics, weight lifting, or hybrid.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
 <style>
-:root{--bg:#070b12;--surface:#0d1420;--surface-2:#111a2a;--border:rgba(255,255,255,0.08);--text:#e6edf3;--muted:#8b98a9;--accent:#a3e635;--accent-2:#22d3ee;--gradient:linear-gradient(135deg,#a3e635 0%,#22d3ee 100%);--radius:16px}
-*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{background:var(--bg);color:var(--text);font-family:'Inter',system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}h1,h2,h3,.logo{font-family:'Space Grotesk','Inter',sans-serif}.container{max-width:1150px;margin:0 auto;padding:0 24p
+
+/* ============================================================
+   TOKENS
+   ============================================================ */
+:root{
+  --bg:        #14161B;
+  --bg-alt:    #1B1E24;
+  --bg-card:   #20242B;
+  --line:      rgba(236,232,222,0.12);
+  --line-soft: rgba(236,232,222,0.07);
+  --text:      #ECE8DE;
+  --text-dim:  #9AA0AA;
+  --accent:    #C98A3D;
+  --accent-2:  #C0503A;
+  --accent-ink:#1B1206;
+
+  --display: "Big Shoulders Display", sans-serif;
+  --body:    "IBM Plex Sans", sans-serif;
+
+  --wrap: 1120px;
+}
+
+*, *::before, *::after{ box-sizing: border-box; }
+
+html{ scroll-behavior: smooth; }
+
+body{
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--body);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img{ max-width: 100%; display: block; }
+
+a{ color: inherit; }
+
+h1, h2, h3{
+  font-family: var(--display);
+  font-weight: 700;
+  line-height: 1.02;
+  margin: 0;
+  letter-spacing: 0.002em;
+}
+
+p{ margin: 0; }
+
+.wrap{
+  max-width: var(--wrap);
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+section{ position: relative; }
+
+.eyebrow{
+  font-family: var(--body);
+  font-size: 0.92rem;
+  color: var(--text-dim);
+  max-width: 46ch;
+}
+
+.section-head{
+  max-width: 620px;
+  margin-bottom: 48px;
+}
+
+.section-head h2{
+  font-size: clamp(2rem, 4vw, 2.9rem);
+  margin-bottom: 14px;
+}
+
+.section-head p{
+  color: var(--text-dim);
+  font-size: 1.05rem;
+  max-width: 52ch;
+}
+
+.btn{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--body);
+  font-weight: 600;
+  font-size: 0.98rem;
+  padding: 13px 22px;
+  border-radius: 3px;
+  text-decoration: none;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background-color 160ms ease, color 160ms ease, border-color 160ms ease;
+}
+
+.btn-primary{
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+.btn-primary:hover{ background: #DEA05A; }
+
+.btn-ghost{
+  background: transparent;
+  color: var(--text);
+  border-color: var(--line);
+}
+.btn-ghost:hover{ border-color: var(--text-dim); }
+
+:focus-visible{
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce){
+  *{ animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
+
+/* ============================================================
+   NAV
+   ============================================================ */
+.nav{
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: rgba(20,22,27,0.88);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line-soft);
+}
+
+.nav .wrap{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+}
+
+.nav-mark{
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 1.35rem;
+  text-decoration: none;
+  letter-spacing: 0.01em;
+}
+
+.nav-links{
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a{
+  text-decoration: none;
+  color: var(--text-dim);
+  font-size: 0.95rem;
+  transition: color 150ms ease;
+}
+.nav-links a:hover{ color: var(--text); }
+
+.nav-cta{ display: flex; align-items: center; gap: 22px; }
+
+.nav-toggle-label{
+  display: none;
+  width: 30px;
+  height: 22px;
+  position: relative;
+  cursor: pointer;
+}
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--text);
+  transition: transform 180ms ease, opacity 180ms ease;
+}
+.nav-toggle-label span{ top: 10px; }
+.nav-toggle-label span::before{ top: -8px; }
+.nav-toggle-label span::after{ top: 8px; }
+
+#nav-toggle{ display: none; }
+
+@media (max-width: 860px){
+  .nav-links{
+    position: absolute;
+    top: 72px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    background: var(--bg);
+    border-bottom: 1px solid var(--line);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 220ms ease;
+  }
+  .nav-links li{ width: 100%; }
+  .nav-links a{
+    display: block;
+    padding: 16px 28px;
+    border-top: 1px solid var(--line-soft);
+  }
+  #nav-toggle:checked ~ .wrap .nav-links{ max-height: 320px; }
+  .nav-toggle-label{ display: block; }
+  #nav-toggle:checked ~ .wrap .nav-toggle-label span{ background: transparent; }
+  #nav-toggle:checked ~ .wrap .nav-toggle-label span::before{ transform: translateY(8px) rotate(45deg); }
+  #nav-toggle:checked ~ .wrap .nav-toggle-label span::after{ transform: translateY(-8px) rotate(-45deg); }
+  .nav-cta .btn-ghost{ display: none; }
+}
+
+/* ============================================================
+   PHONE MOCKUPS / SCREENSHOT SLOTS
+   ============================================================ */
+.phone{
+  width: 260px;
+  aspect-ratio: 9 / 19.5;
+  background: #0C0D10;
+  border-radius: 34px;
+  padding: 10px;
+  box-shadow: 0 30px 60px -20px rgba(0,0,0,0.65), 0 0 0 1px rgba(255,255,255,0.04);
+  flex-shrink: 0;
+}
+
+.phone__notch{
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 34%;
+  height: 18px;
+  background: #0C0D10;
+  border-radius: 0 0 12px 12px;
+  z-index: 2;
+}
+
+.phone__screen{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 24px;
+  overflow: hidden;
+  background: linear-gradient(160deg, #262A32, #17191E);
+}
+
+.phone__screen img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.shot-empty-label{
+  position: absolute;
+  inset: 0;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 20px;
+  text-align: center;
+  background-image:
+    repeating-linear-gradient(135deg, rgba(236,232,222,0.05) 0 2px, transparent 2px 14px);
+}
+
+.shot-empty-label .mark{
+  width: 34px;
+  height: 34px;
+  border: 1.5px solid var(--text-dim);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-dim);
+  font-family: var(--display);
+  font-size: 1rem;
+}
+
+.shot-empty-label .name{
+  font-size: 0.82rem;
+  color: var(--text-dim);
+  line-height: 1.4;
+}
+
+.shot-empty-label code{
+  font-family: var(--body);
+  font-size: 0.76rem;
+  color: var(--accent);
+  background: rgba(201,138,61,0.12);
+  padding: 2px 6px;
+  border-radius: 3px;
+}
+
+.phone__screen.is-empty img{ display: none; }
+.phone__screen.is-empty .shot-empty-label{ display: flex; }
+
+/* rectangular (non-phone) screenshot tile, used in the feature grid */
+.tile-shot{
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: 6px;
+  overflow: hidden;
+  background: linear-gradient(160deg, #262A32, #17191E);
+  border: 1px solid var(--line-soft);
+}
+.tile-shot img{ width: 100%; height: 100%; object-fit: cover; }
+.tile-shot.is-empty img{ display: none; }
+.tile-shot .shot-empty-label{ padding: 14px; }
+.tile-shot.is-empty .shot-empty-label{ display: flex; }
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero{
+  padding: 84px 0 100px;
+  overflow: hidden;
+}
+
+.hero .wrap{
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.hero-eyebrow{
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 0.92rem;
+  margin-bottom: 18px;
+}
+
+.hero h1{
+  font-size: clamp(2.6rem, 5.4vw, 4.1rem);
+  margin-bottom: 22px;
+}
+
+.hero p.lede{
+  color: var(--text-dim);
+  font-size: 1.15rem;
+  max-width: 46ch;
+  margin-bottom: 34px;
+}
+
+.hero-actions{
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.hero-note{
+  font-size: 0.88rem;
+  color: var(--text-dim);
+}
+.hero-note code{
+  font-family: var(--body);
+  color: var(--text);
+  border-bottom: 1px dashed var(--line);
+}
+
+.hero-stage{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 480px;
+}
+
+.hero-stage .phone{
+  position: absolute;
+}
+
+.hero-stage .phone.back{
+  width: 220px;
+  transform: rotate(7deg) translate(64px, 26px);
+  filter: brightness(0.72);
+  z-index: 1;
+}
+
+.hero-stage .phone.front{
+  transform: rotate(-4deg);
+  z-index: 2;
+}
+
+.spec-card{
+  position: absolute;
+  right: -6px;
+  bottom: 18px;
+  width: 216px;
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 18px 18px 16px;
+  z-index: 3;
+  box-shadow: 0 20px 40px -18px rgba(0,0,0,0.6);
+}
+
+.spec-card h3{
+  font-family: var(--body);
+  font-weight: 600;
+  font-size: 0.82rem;
+  color: var(--text-dim);
+  margin-bottom: 12px;
+}
+
+.spec-row{
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 0.85rem;
+  padding: 7px 0;
+  border-top: 1px solid var(--line-soft);
+}
+.spec-row:first-of-type{ border-top: none; }
+.spec-row span:first-child{ color: var(--text-dim); }
+.spec-row span:last-child{ font-weight: 600; text-align: right; }
+
+@media (max-width: 940px){
+  .hero .wrap{ grid-template-columns: 1fr; }
+  .hero-stage{ min-height: 420px; margin-top: 10px; }
+  .spec-card{ right: 6px; }
+}
+
+@media (max-width: 520px){
+  .hero-stage .phone{ width: 200px; }
+  .hero-stage .phone.back{ display: none; }
+  .spec-card{ position: static; margin-top: 22px; width: 100%; }
+  .hero-stage{ min-height: 320px; }
+}
+
+/* ============================================================
+   TRAINING STYLES
+   ============================================================ */
+.styles{
+  background: var(--bg-alt);
+  padding: 100px 0;
+  border-top: 1px solid var(--line-soft);
+  border-bottom: 1px solid var(--line-soft);
+}
+
+.styles-grid{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+}
+
+.style-card{
+  background: var(--bg-alt);
+  padding: 30px 26px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.style-card .kicker{
+  font-size: 0.82rem;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.style-card h3{
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.style-card p{
+  color: var(--text-dim);
+  font-size: 0.94rem;
+}
+
+@media (max-width: 860px){
+  .styles-grid{ grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 520px){
+  .styles-grid{ grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   HOW IT ADAPTS
+   ============================================================ */
+.adapts{ padding: 110px 0; }
+
+.adapts .wrap{
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 64px;
+  align-items: center;
+}
+
+.adapts-list{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.adapts-list li{
+  display: flex;
+  gap: 16px;
+  padding: 20px 0;
+  border-top: 1px solid var(--line-soft);
+}
+.adapts-list li:first-child{ border-top: none; padding-top: 0; }
+
+.adapts-mark{
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.adapts-mark svg{ width: 15px; height: 15px; stroke: var(--accent); }
+
+.adapts-copy h4{
+  font-family: var(--body);
+  font-weight: 600;
+  font-size: 1.02rem;
+  margin: 0 0 4px;
+}
+.adapts-copy p{
+  color: var(--text-dim);
+  font-size: 0.92rem;
+}
+
+.adapts-stage{ display: flex; justify-content: center; }
+
+@media (max-width: 860px){
+  .adapts .wrap{ grid-template-columns: 1fr; }
+  .adapts-stage{ margin-top: 12px; }
+}
+
+/* ============================================================
+   NUTRITION
+   ============================================================ */
+.nutrition{
+  background: var(--bg-alt);
+  padding: 110px 0;
+  border-top: 1px solid var(--line-soft);
+  border-bottom: 1px solid var(--line-soft);
+}
+
+.nutrition .wrap{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+
+.macro-card{
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.macro-ring{
+  width: 128px;
+  height: 128px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  background: conic-gradient(
+    var(--accent) 0 35%,
+    var(--accent-2) 35% 75%,
+    #4A5561 75% 100%
+  );
+  position: relative;
+}
+.macro-ring::after{
+  content: "";
+  position: absolute;
+  inset: 14px;
+  border-radius: 50%;
+  background: var(--bg-card);
+}
+
+.macro-legend{ display: flex; flex-direction: column; gap: 10px; }
+.macro-legend .row{ display: flex; align-items: center; gap: 10px; font-size: 0.92rem; }
+.macro-legend .dot{ width: 10px; height: 10px; border-radius: 2px; flex-shrink: 0; }
+.macro-legend .dot.protein{ background: var(--accent); }
+.macro-legend .dot.carbs{ background: var(--accent-2); }
+.macro-legend .dot.fat{ background: #4A5561; }
+.macro-legend small{ display: block; color: var(--text-dim); font-size: 0.78rem; margin-top: 6px; }
+
+@media (max-width: 860px){
+  .nutrition .wrap{ grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   FEATURES GRID
+   ============================================================ */
+.features{ padding: 110px 0; }
+
+.features-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px 32px;
+}
+
+.feature-card h3{
+  font-family: var(--body);
+  font-weight: 600;
+  font-size: 1.08rem;
+  margin: 16px 0 8px;
+}
+
+.feature-card p{
+  color: var(--text-dim);
+  font-size: 0.92rem;
+}
+
+@media (max-width: 860px){
+  .features-grid{ grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px){
+  .features-grid{ grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   CTA BAND
+   ============================================================ */
+.cta{
+  background: var(--bg-card);
+  border-top: 1px solid var(--line-soft);
+  padding: 100px 0;
+  text-align: left;
+}
+
+.cta .wrap{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.cta h2{
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  max-width: 16ch;
+}
+
+.cta-right{ display: flex; flex-direction: column; gap: 16px; align-items: flex-start; }
+
+.cta-url{
+  font-size: 0.9rem;
+  color: var(--text-dim);
+}
+.cta-url a{ color: var(--accent); text-decoration: none; border-bottom: 1px dashed rgba(201,138,61,0.5); }
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+footer{
+  padding: 48px 0;
+  border-top: 1px solid var(--line-soft);
+}
+
+footer .wrap{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+
+.footer-mark{
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.footer-links{
+  display: flex;
+  gap: 24px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+}
+.footer-links a{
+  color: var(--text-dim);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+.footer-links a:hover{ color: var(--text); }
+
+.footer-fine{
+  color: var(--text-dim);
+  font-size: 0.82rem;
+}
+
+/* ============================================================
+   ENTRANCE (one moment, hero only)
+   ============================================================ */
+.hero-stage .phone,
+.spec-card{
+  opacity: 0;
+  animation: rise 700ms ease forwards;
+}
+.hero-stage .phone.back{ animation-delay: 60ms; }
+.hero-stage .phone.front{ animation-delay: 160ms; }
+.spec-card{ animation-delay: 320ms; }
+
+@keyframes rise{
+  from{ opacity: 0; transform: translateY(16px) rotate(var(--rot, 0deg)); }
+  to{ opacity: 1; }
+}
+
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     NAV
+     ============================================================ -->
+<input type="checkbox" id="nav-toggle">
+<header class="nav">
+  <div class="wrap">
+    <a class="nav-mark" href="#top">Washek Fitness</a>
+
+    <ul class="nav-links">
+      <li><a href="#styles">Training styles</a></li>
+      <li><a href="#adapts">How it adapts</a></li>
+      <li><a href="#nutrition">Nutrition</a></li>
+      <li><a href="#features">Everything else</a></li>
+    </ul>
+
+    <div class="nav-cta">
+      <a class="btn btn-ghost" href="#features">See what's inside</a>
+      <a class="btn btn-primary" href="https://washek-fitness.washekfitness.workers.dev">Open the app</a>
+    </div>
+
+    <label class="nav-toggle-label" for="nav-toggle" aria-label="Toggle menu"><span></span></label>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ============================================================
+       HERO
+       ============================================================ -->
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <p class="hero-eyebrow">Washek Fitness</p>
+        <h1>A program built for your body, your equipment, and your goals.</h1>
+        <p class="lede">Washek Fitness writes your workouts and your macro targets around the equipment you have, any injuries or limits, your gender, and what you're actually training for — then adjusts every week as you go.</p>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="https://washek-fitness.washekfitness.workers.dev">Open the app</a>
+          <a class="btn btn-ghost" href="#styles">See what's inside</a>
+        </div>
+
+        <p class="hero-note">No separate download or search needed — <code>washek-fitness.washekfitness.workers.dev</code> opens it directly.</p>
+      </div>
+
+      <div class="hero-stage">
+        <div class="phone back">
+          <div class="phone__notch"></div>
+          <div class="phone__screen">
+            <img src="screenshots/hero-secondary.png" alt="Washek Fitness nutrition screen" onerror="this.parentElement.classList.add('is-empty')">
+            <div class="shot-empty-label">
+              <span class="mark">2</span>
+              <span class="name">Screenshot</span>
+              <code>screenshots/hero-secondary.png</code>
+            </div>
+          </div>
+        </div>
+
+        <div class="phone front">
+          <div class="phone__notch"></div>
+          <div class="phone__screen">
+            <img src="screenshots/hero-primary.png" alt="Washek Fitness workout screen" onerror="this.parentElement.classList.add('is-empty')">
+            <div class="shot-empty-label">
+              <span class="mark">1</span>
+              <span class="name">Screenshot</span>
+              <code>screenshots/hero-primary.png</code>
+            </div>
+          </div>
+        </div>
+
+        <div class="spec-card">
+          <h3>Built for you</h3>
+          <div class="spec-row"><span>Equipment</span><span>Home, bands</span></div>
+          <div class="spec-row"><span>Limit</span><span>Left shoulder</span></div>
+          <div class="spec-row"><span>Goal</span><span>Hybrid strength</span></div>
+          <div class="spec-row"><span>Split</span><span>4 days / week</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       TRAINING STYLES
+       ============================================================ -->
+  <section class="styles" id="styles">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Four ways to train, one system underneath.</h2>
+        <p>Pick the style that fits how you want to train. The programming underneath — your goals, your equipment, your limits — carries over no matter which one you choose.</p>
+      </div>
+
+      <div class="styles-grid">
+        <div class="style-card">
+          <span class="kicker">Calisthenics</span>
+          <h3>Bodyweight, done in order</h3>
+          <p>Progressions from your first pull-up to one-arm work, sequenced around the equipment you actually have.</p>
+        </div>
+        <div class="style-card">
+          <span class="kicker">Weighted calisthenics</span>
+          <h3>Load added on purpose</h3>
+          <p>Vests, belts, and bands added to bodyweight movements once you outgrow them — without losing the skill work underneath.</p>
+        </div>
+        <div class="style-card">
+          <span class="kicker">Weight lifting</span>
+          <h3>Barbell and dumbbell</h3>
+          <p>Programming built around your gym's equipment and your experience level, from your first cycle to your tenth.</p>
+        </div>
+        <div class="style-card">
+          <span class="kicker">Hybrid</span>
+          <h3>Both, in one program</h3>
+          <p>Calisthenics and weights in the same week, when neither one alone fits how you want to train.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       HOW IT ADAPTS
+       ============================================================ -->
+  <section class="adapts" id="adapts">
+    <div class="wrap">
+      <div>
+        <div class="section-head" style="margin-bottom:34px;">
+          <h2>It asks about you before it writes anything.</h2>
+          <p>Every program starts from the same five questions — the answers are what actually shape the plan.</p>
+        </div>
+
+        <ul class="adapts-list">
+          <li>
+            <span class="adapts-mark"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4L4 14l6 6L20 10z"/></svg></span>
+            <div class="adapts-copy">
+              <h4>Equipment</h4>
+              <p>From a full gym to a resistance band on the living room floor.</p>
+            </div>
+          </li>
+          <li>
+            <span class="adapts-mark"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.35-9.5-9C1 8 3 4 7 4c2 0 4 1.5 5 3 1-1.5 3-3 5-3 4 0 6 4 4.5 8-2.5 4.65-9.5 9-9.5 9z"/></svg></span>
+            <div class="adapts-copy">
+              <h4>Injuries and limitations</h4>
+              <p>Movements are chosen — or built around — what your body can actually do right now.</p>
+            </div>
+          </li>
+          <li>
+            <span class="adapts-mark"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></span>
+            <div class="adapts-copy">
+              <h4>Gender</h4>
+              <p>Goals and recommendations are set with this in mind, not treated as one default body.</p>
+            </div>
+          </li>
+          <li>
+            <span class="adapts-mark"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></span>
+            <div class="adapts-copy">
+              <h4>Goals</h4>
+              <p>Strength, size, fat loss, or a specific skill — the plan is written toward one clear target.</p>
+            </div>
+          </li>
+          <li>
+            <span class="adapts-mark"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/></svg></span>
+            <div class="adapts-copy">
+              <h4>Other constraints</h4>
+              <p>How many days you can train, how long each session can run, and what your week actually looks like.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="adapts-stage">
+        <div class="phone" style="position:static;">
+          <div class="phone__notch"></div>
+          <div class="phone__screen">
+            <img src="screenshots/onboarding.png" alt="Washek Fitness onboarding screen" onerror="this.parentElement.classList.add('is-empty')">
+            <div class="shot-empty-label">
+              <span class="mark">3</span>
+              <span class="name">Screenshot</span>
+              <code>screenshots/onboarding.png</code>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       NUTRITION
+       ============================================================ -->
+  <section class="nutrition" id="nutrition">
+    <div class="wrap">
+      <div>
+        <div class="section-head" style="margin-bottom:34px;">
+          <h2>Macro goals that match the plan, not a generic calculator.</h2>
+          <p>Your targets come from the same goals and constraints as your training. Scan a meal or a barcode and see how the day is actually going, without logging everything by hand.</p>
+        </div>
+
+        <div class="macro-card">
+          <div class="macro-ring" role="img" aria-label="Example macro split: 35 percent protein, 40 percent carbs, 25 percent fat"></div>
+          <div class="macro-legend">
+            <div class="row"><span class="dot protein"></span> Protein</div>
+            <div class="row"><span class="dot carbs"></span> Carbs</div>
+            <div class="row"><span class="dot fat"></span> Fat</div>
+            <small>Illustrative example — your split is set from your own goals.</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="adapts-stage">
+        <div class="phone" style="position:static;">
+          <div class="phone__notch"></div>
+          <div class="phone__screen">
+            <img src="screenshots/food-scan.png" alt="Washek Fitness food scanning screen" onerror="this.parentElement.classList.add('is-empty')">
+            <div class="shot-empty-label">
+              <span class="mark">4</span>
+              <span class="name">Screenshot</span>
+              <code>screenshots/food-scan.png</code>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FEATURES GRID
+       ============================================================ -->
+  <section class="features" id="features">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Everything around the workout, covered too.</h2>
+        <p>Training is the center of it, but the rest of the picture — how you're eating, how you're recovering, how you're actually moving — is built in.</p>
+      </div>
+
+      <div class="features-grid">
+
+        <div class="feature-card">
+          <div class="tile-shot">
+            <img src="screenshots/progress-photos.png" alt="Progress photo AI analysis screen" onerror="this.parentElement.classList.add('is-empty')">
+            <div class="shot-empty-label">
+              <span class="mark">5</span>
+              <span class="name">Screenshot</span>
+              <code>screenshots/progress-photos.png</code>
+            </div>
+          </div>
+          <h3>Progress photos, read by AI</h3>
+          <p>Snap a photo on your own schedule. Analysis tracks visible changes over time, not just the number on the scale.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="tile-shot">
+            <img src="screenshots/ai-chat.png" alt="AI coach chat screen" onerror="this.parentElement.classList.add('is-empty')">
+            <div class="shot-empty-label">
+              <span class="mark">6</span>
+              <span class="name">Screenshot</span>
+              <code>screenshots/ai-chat.png</code>
+            </div>
+          </div>
+          <h3>Kael, your AI coach</h3>
+          <p>Ask why a session looks the way it does, request a swap, or talk through a change — Kael has the context on your program.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="tile-shot">
+            <img src="screenshots/form-analysis.png" alt="Video form analysis screen" onerror="this.parentElement.classList.add('is-empty')">
+            <div class="shot-empty-label">
+              <span class="mark">7</span>
+              <span class="name">Screenshot</span>
+              <code>screenshots/form-analysis.png</code>
+            </div>
+          </div>
+          <h3>Form analysis, on video</h3>
+          <p>Upload or record a set and get feedback on how it looked, not just whether the rep counted.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="tile-shot">
+            <img src="screenshots/checkin.png" alt="Post-workout check-in screen" onerror="this.parentElement.classList.add('is-empty')">
+            <div class="shot-empty-label">
+              <span class="mark">8</span>
+              <span class="name">Screenshot</span>
+              <code>screenshots/checkin.png</code>
+            </div>
+          </div>
+          <h3>Post-workout check-in</h3>
+          <p>Log how a session actually felt — effort, soreness, energy — so the next one can adjust around it.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="tile-shot">
+            <img src="screenshots/weekly-update.png" alt="Weekly program update screen" onerror="this.parentElement.classList.add('is-empty')">
+            <div class="shot-empty-label">
+              <span class="mark">9</span>
+              <span class="name">Screenshot</span>
+              <code>screenshots/weekly-update.png</code>
+            </div>
+          </div>
+          <h3>Weekly updates</h3>
+          <p>Your program moves as your data does — check-ins, performance, and recovery all feed into the next week.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="tile-shot">
+            <img src="screenshots/live-tracking.png" alt="Live workout tracking screen" onerror="this.parentElement.classList.add('is-empty')">
+            <div class="shot-empty-label">
+              <span class="mark">10</span>
+              <span class="name">Screenshot</span>
+              <code>screenshots/live-tracking.png</code>
+            </div>
+          </div>
+          <h3>Live workout tracking</h3>
+          <p>Follow the plan set by set while you train, with weight, reps, and rest logged as you go.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CTA
+       ============================================================ -->
+  <section class="cta">
+    <div class="wrap">
+      <h2>Your program is waiting.</h2>
+      <div class="cta-right">
+        <a class="btn btn-primary" href="https://washek-fitness.washekfitness.workers.dev">Open Washek Fitness</a>
+        <span class="cta-url">Or go directly to <a href="https://washek-fitness.washekfitness.workers.dev">washek-fitness.washekfitness.workers.dev</a></span>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span class="footer-mark">Washek Fitness</span>
+    <ul class="footer-links">
+      <li><a href="#styles">Training styles</a></li>
+      <li><a href="#adapts">How it adapts</a></li>
+      <li><a href="#nutrition">Nutrition</a></li>
+      <li><a href="#features">Everything else</a></li>
+      <li><a href="https://washek-fitness.washekfitness.workers.dev">Open the app</a></li>
+    </ul>
+    <span class="footer-fine">&copy; 2026 Washek Fitness</span>
+  </div>
+</footer>
+
+</body>
+</html>
