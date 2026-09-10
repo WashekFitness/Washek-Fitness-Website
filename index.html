@@ -363,6 +363,63 @@ footer{padding:60px 0 calc(35px + env(safe-area-inset-bottom));border-top:1px so
   *{transition:none!important}
 }
 
+
+/* App screenshots */
+.media-slot.has-shot{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:clamp(16px,3vw,28px);
+  background:
+    linear-gradient(160deg,color-mix(in srgb,var(--text) 5%,transparent),color-mix(in srgb,var(--text) 1%,transparent));
+}
+.media-slot.has-shot:before,
+.media-slot.has-shot:after{display:none}
+.media-slot.has-shot .shot-frame{
+  position:relative;
+  width:min(100%,340px);
+  border-radius:28px;
+  overflow:hidden;
+  border:1px solid var(--line);
+  box-shadow:
+    0 0 0 1px color-mix(in srgb,var(--text) 4%,transparent),
+    0 18px 50px color-mix(in srgb,var(--text) 18%,transparent);
+  background:var(--bg);
+}
+.media-slot.has-shot .shot-frame img{
+  display:block;
+  width:100%;
+  height:auto;
+  vertical-align:middle;
+}
+/* Wider slots can show a slightly larger phone */
+.showcase-grid>.media-slot.has-shot .shot-frame,
+.kael-media.has-shot .shot-frame,
+.hero-media.has-shot .shot-frame{
+  width:min(100%,380px);
+}
+.form-media.has-shot .shot-frame{
+  width:min(100%,360px);
+}
+/* Taller portrait-friendly min-heights */
+.hero-media.has-shot{min-height:0}
+.showcase-grid>.media-slot.has-shot{min-height:0}
+.showcase-stack .media-slot.has-shot{min-height:0}
+.kael-media.has-shot,
+.form-media.has-shot,
+.adapt-visual.has-shot,
+.nutrition-media.has-shot{min-height:0}
+@media(max-width:980px){
+  .media-slot.has-shot .shot-frame{width:min(100%,320px)}
+  .showcase-grid>.media-slot.has-shot .shot-frame,
+  .kael-media.has-shot .shot-frame,
+  .hero-media.has-shot .shot-frame{width:min(100%,340px)}
+}
+@media(max-width:720px){
+  .media-slot.has-shot{padding:18px 14px}
+  .media-slot.has-shot .shot-frame{width:min(100%,300px);border-radius:22px}
+}
+
 </style>
 </head>
 <body>
@@ -383,8 +440,8 @@ footer{padding:60px 0 calc(35px + env(safe-area-inset-bottom));border-top:1px so
       <div class="hero-actions"><a class="btn btn-primary" href="https://washek.washekfitness.workers.dev">Start training <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a><a class="btn btn-ghost" href="#how">See how it works</a></div>
       <div class="micro-proof"><span><i class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m6 12 4 4 8-9"/></svg></i>Calisthenics + weights + hybrid</span><span><i class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m6 12 4 4 8-9"/></svg></i>Personalized programming</span><span><i class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m6 12 4 4 8-9"/></svg></i>AI coaching with Kael</span></div>
     </div>
-    <!-- IMAGE SLOT 01 / HERO: Use a clean screenshot of the app's Dashboard/home screen. Show the strongest first-impression view; no personal user data. -->
-    <div class="media-slot hero-media reveal" aria-label="WASHEK personalized workout app dashboard preview"><div class="slot-content"><div class="slot-label">Your training, at a glance</div><strong>Personalized training in one place.</strong></div></div>
+    <!-- IMAGE SLOT 01 / HERO -->
+    <div class="media-slot has-shot hero-media reveal" aria-label="WASHEK home dashboard showing today's workout and nutrition overview"><div class="shot-frame"><img src="screenshots/dashboard.jpg" alt="WASHEK home dashboard showing today's workout and nutrition overview" width="1179" height="1980" fetchpriority="high" decoding="async"></div></div>
   </div>
 </section>
 <section class="trust" aria-label="WASHEK training benefits"><div class="wrap"><div class="trust-item"><span class="dot"></span><strong>Personalized</strong> training</div><div class="trust-item"><span class="dot"></span><strong>Calisthenics</strong> + strength</div><div class="trust-item"><span class="dot"></span><strong>Nutrition</strong> tools</div><div class="trust-item"><span class="dot"></span><strong>Progress</strong> tracking</div></div></section>
@@ -392,13 +449,13 @@ footer{padding:60px 0 calc(35px + env(safe-area-inset-bottom));border-top:1px so
   <div class="wrap">
     <div class="section-head reveal"><span class="eyebrow">Inside WASHEK</span><h2>Everything you need to stay on track.</h2><p>See how your training experience comes together — from the dashboard and program to progress tracking and the tools you use between workouts.</p></div>
     <div class="showcase-grid">
-      <!-- IMAGE SLOT 02 / DASHBOARD: Use the actual Dashboard page. Ideally capture the full page or the strongest dashboard state with the weekly plan visible. -->
-      <div class="media-slot reveal" aria-label="WASHEK dashboard screenshot"><div class="slot-content"><div class="slot-label">Dashboard</div><strong>Your training overview.</strong></div></div>
+      <!-- IMAGE SLOT 02 / DASHBOARD -->
+      <div class="media-slot has-shot reveal" aria-label="WASHEK dashboard with streak, today's workout, and nutrition summary"><div class="shot-frame"><img src="screenshots/dashboard.jpg" alt="WASHEK dashboard with streak, today's workout, and nutrition summary" width="1179" height="1980" loading="lazy" decoding="async"></div></div>
       <div class="showcase-stack">
-        <!-- IMAGE SLOT 03 / PROGRAM: Use Program or Program Day. Show the actual workout name and exercise list. -->
-        <div class="media-slot reveal" aria-label="WASHEK workout program screenshot"><div class="slot-content"><div class="slot-label">Program</div><strong>Your workout, clearly laid out.</strong></div></div>
-        <!-- IMAGE SLOT 04 / PROGRESS: Use Progress page or progress-photo interface. Show charts/history if available. -->
-        <div class="media-slot reveal" aria-label="WASHEK progress tracking screenshot"><div class="slot-content"><div class="slot-label">Progress</div><strong>See how your training is moving.</strong></div></div>
+        <!-- IMAGE SLOT 03 / PROGRAM -->
+        <div class="media-slot has-shot reveal" aria-label="WASHEK live workout screen with Monday Skill + Upper Push exercises"><div class="shot-frame"><img src="screenshots/live-workout.jpg" alt="WASHEK live workout screen with Monday Skill + Upper Push exercises" width="1179" height="1980" loading="lazy" decoding="async"></div></div>
+        <!-- IMAGE SLOT 04 / PROGRESS -->
+        <div class="media-slot has-shot reveal" aria-label="WASHEK workout analytics and performance dashboard"><div class="shot-frame"><img src="screenshots/progress.jpg" alt="WASHEK workout analytics and performance dashboard" width="1179" height="1980" loading="lazy" decoding="async"></div></div>
       </div>
     </div>
   </div>
@@ -426,8 +483,10 @@ footer{padding:60px 0 calc(35px + env(safe-area-inset-bottom));border-top:1px so
   <article class="feature reveal" style="--accent:var(--purple)"><div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.2"/></svg></div><h3>Progress photos & AI analysis</h3><p>Log progress photos on a schedule, get AI-assisted analysis of visible changes, and see it plotted on a progress graph over time.</p></article>
   <article class="feature reveal" style="--accent:var(--green)"><div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v12H8l-4 4z"/><path d="M8 9h8M8 12h5"/></svg></div><h3>AI chat with Kael</h3><p>Chat with Kael whenever you need guidance, using the context of your training, goals, and preferences already in the app.</p></article>
 </div></div></section>
-<section class="kael-section" id="kael"><div class="wrap"><div class="kael-grid"><!-- IMAGE SLOT 07 / KAEL: Use the actual Kael screen. Show the real conversation interface and a genuine example of training-focused guidance; do not invent messages. --><div class="media-slot kael-media reveal" aria-label="Kael AI fitness coaching screenshot"><div class="slot-content"><div class="slot-label">Kael AI</div><strong>Your AI coaching experience.</strong></div></div><div class="kael-copy reveal"><span class="eyebrow">Meet Kael</span><h2>AI coaching, built into your fitness app.</h2><p>Kael provides training-focused coaching using the context available in WASHEK, so guidance can live alongside the rest of your training experience.</p><div class="kael-points"><div class="kael-point"><b>✓</b><span>Training guidance across calisthenics, weighted calisthenics, weights, and hybrid training</span></div><div class="kael-point"><b>✓</b><span>Coaching informed by the goals, preferences, and limitations you provide</span></div><div class="kael-point"><b>✓</b><span>Additional workout support available on eligible plans</span></div></div></div></div></div></section>
-<section class="form-section"><div class="wrap"><div class="form-showcase"><div class="form-copy reveal"><span class="eyebrow">Advanced training tools</span><h2>Go beyond logging the workout.</h2><p>For eligible plans, WASHEK includes video-based calisthenics form analysis with feedback tools designed to help you review movement quality.</p></div><!-- IMAGE SLOT 08 / FORM LAB: Use the actual Form Lab screen or the cleanest real analysis-result screen. Show video analysis and results if available. --><div class="media-slot form-media reveal" aria-label="WASHEK calisthenics form analysis screenshot"><div class="slot-content"><div class="slot-label">Form analysis</div><strong>Review your movement.</strong></div></div></div></div></section>
+<section class="kael-section" id="kael"><div class="wrap"><div class="kael-grid"><!-- IMAGE SLOT 07 / KAEL -->
+<div class="media-slot has-shot kael-media reveal" aria-label="Kael AI fitness coach answering how to start working out"><div class="shot-frame"><img src="screenshots/kael.jpg" alt="Kael AI fitness coach answering how to start working out" width="1179" height="1980" loading="lazy" decoding="async"></div></div><div class="kael-copy reveal"><span class="eyebrow">Meet Kael</span><h2>AI coaching, built into your fitness app.</h2><p>Kael provides training-focused coaching using the context available in WASHEK, so guidance can live alongside the rest of your training experience.</p><div class="kael-points"><div class="kael-point"><b>✓</b><span>Training guidance across calisthenics, weighted calisthenics, weights, and hybrid training</span></div><div class="kael-point"><b>✓</b><span>Coaching informed by the goals, preferences, and limitations you provide</span></div><div class="kael-point"><b>✓</b><span>Additional workout support available on eligible plans</span></div></div></div></div></div></section>
+<section class="form-section"><div class="wrap"><div class="form-showcase"><div class="form-copy reveal"><span class="eyebrow">Advanced training tools</span><h2>Go beyond logging the workout.</h2><p>For eligible plans, WASHEK includes video-based calisthenics form analysis with feedback tools designed to help you review movement quality.</p></div><!-- IMAGE SLOT 08 / FORM LAB -->
+<div class="media-slot has-shot form-media reveal" aria-label="WASHEK form analysis for front lever with score and coaching priorities"><div class="shot-frame"><img src="screenshots/form-lab.jpg" alt="WASHEK form analysis for front lever with score and coaching priorities" width="1179" height="1980" loading="lazy" decoding="async"></div></div></div></div></section>
 <section class="about-section" id="about"><div class="wrap"><div class="section-head reveal"><span class="eyebrow">About</span><h2>What WASHEK is, and why it exists.</h2></div><div class="about-grid"><div class="about-copy reveal"><p>WASHEK (Weighted Athletic System for Hybrid &amp; Elite Kalisthenics) is an AI-based workout builder and fitness tracker designed to eliminate guesswork. I built WASHEK because I know how frustrating it is to put in maximum effort and still hit a plateau.</p><p>Managing progressive overload, tracking macros, identifying weak points, and maintaining a structured program—all at once—can feel overwhelming. WASHEK brings every aspect of your training together in one place. From building custom workouts to tracking your progress and nutrition, you get total visibility over your fitness.</p><p>Plus, with Kael checking in post-workout and delivering your weekly reports, you’ll always know exactly where you stand and what to improve next.</p></div><!-- VIDEO SLOT / ABOUT: Replace this media-slot with an embedded video (e.g. YouTube iframe or <video> tag) explaining WASHEK. --><div class="media-slot about-video reveal" aria-label="WASHEK explainer video placeholder"><div class="slot-content"><div class="slot-label">Video</div><strong>Explainer video coming soon.</strong></div></div></div></div></section>
 <section class="faq" id="faq"><div class="wrap"><div class="section-head reveal"><span class="eyebrow">FAQ</span><h2>Questions about WASHEK.</h2><p>Clear answers about the fitness app, training styles, nutrition tools, progress tracking, and Kael AI coaching.</p></div><div class="faq-grid"><article class="faq-item reveal"><h3>What does WASHEK stand for?</h3><p>WASHEK stands for Weighted Athletic System for Hybrid & Elite Kalisthenics.</p></article><article class="faq-item reveal"><h3>What is WASHEK?</h3><p>WASHEK is a fitness app that brings personalized training, nutrition tools, progress tracking, and AI coaching together in one place.</p></article><article class="faq-item reveal"><h3>Is WASHEK a calisthenics app?</h3><p>Yes. WASHEK supports calisthenics, weighted calisthenics, weights, and hybrid training approaches.</p></article><article class="faq-item reveal"><h3>Can WASHEK build a personalized workout plan?</h3><p>WASHEK uses the training information you provide, including your goals, experience, equipment, schedule, and preferences, to shape your training experience.</p></article><article class="faq-item reveal"><h3>Does WASHEK include nutrition tracking?</h3><p>Yes. WASHEK includes nutrition tools for macro tracking and food or package scanning.</p></article><article class="faq-item reveal"><h3>What is Kael AI?</h3><p>Kael is the AI coaching experience inside WASHEK, providing training-focused guidance using the context available in the app.</p></article><article class="faq-item reveal"><h3>Can I track my workouts and progress?</h3><p>Yes. WASHEK includes live workout tracking, workout history and progress tools, analytics, and progress photo tracking.</p></article></div></div></section>
 <section class="cta"><div class="wrap"><div class="cta-box reveal"><div><span class="eyebrow">Start training</span><h2>Your goals. Your equipment. Your training.</h2><p>Explore WASHEK and build a training experience around the way you want to train.</p></div><div class="cta-actions"><a class="btn btn-primary" href="https://washek.washekfitness.workers.dev">Open WASHEK <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a><small>Open the WASHEK app</small></div></div></div></section>
